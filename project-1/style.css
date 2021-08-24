@@ -21,8 +21,14 @@ ul{
     
 }
 nav{
+    font-size: 20px;
     padding: 5px;
     margin: 10px;
+    background-image: url(resources/logo.svg);
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
 }
 ul li{
     
@@ -42,33 +48,33 @@ li a{
 li a:hover{
     color: #000;
 }
-.logo{
-    background-image: url();
-    margin:0 0;
-    padding: 0;
-    width: 100px;
-    height: 30px;
-    border: 3px solid;
-    
-}
+
 
 h2 {
     line-height: 50px;
     margin-top: 100px;
-    width: 380px;
+    width: 60%;
     font-family: serif;
     text-transform: uppercase;
     font-weight: normal;
     font-size: 30px;
     color: #fff;
     
+    
 }
+
+
 .section-1{
-    background-image: url(resources/photo-1.png) center;
+    height: 70vh;
+    background-image: url(resources/photo-1.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    
 }
 .section-1 > p {
     
-    width: 380px;
+    width: 60%;
     font-family: sans-serif;
     text-transform: uppercase;
     font-weight: normal;
@@ -77,10 +83,12 @@ h2 {
 }
 .buttons{
     box-shadow: wheat ;
-    width: 40%;
+    width: 45%;
     height: 170px;
     background-color: #fff;
     margin: 10px 0;
+    padding: 0;
+    text-align: center;
     
 }
 .buttons p{
@@ -98,14 +106,14 @@ h2 {
     color: #000;
     border-radius: 5px;
     text-transform: capitalize;
-    font-size: 16x;
+    font-size: 16px;
     border: #000 0.5px solid;
-    width: 150px;
+    width: 10%
     height: 20px;
     background-color: #fff;
     text-align: center;
-    margin:0 0px 20px 35px;
-    padding: 5px;
+     margin: 20px;
+    padding: 10px;
     
     
 }
