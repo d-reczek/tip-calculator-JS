@@ -4,12 +4,13 @@ body{
     background-color: #334A44;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.page{
-    margin: 100px 200px;
+.page-1{
+    margin: 100px 200px 0;
     background-color: #47645F;
-    height: 1600px;
+    
     padding: 15px 100px;
 }
+
 ul{
     
     display:flex;
@@ -24,7 +25,7 @@ nav{
     font-size: 20px;
     padding: 5px;
     margin: 10px;
-    background-image: url(resources/logo.svg);
+    background-image: url(resources/logo-1.JPG);
     height: 80px;
     background-repeat: no-repeat;
     background-size: contain;
@@ -65,13 +66,14 @@ h2 {
 
 
 .section-1{
-    height: 70vh;
+    
     background-image: url(resources/photo-1.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
     
 }
+
 .section-1 > p {
     
     width: 60%;
@@ -108,7 +110,7 @@ h2 {
     text-transform: capitalize;
     font-size: 16px;
     border: #000 0.5px solid;
-    width: 10%
+    width: 10%;
     height: 20px;
     background-color: #fff;
     text-align: center;
@@ -122,7 +124,6 @@ h2 {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
-    
     
 }
 
@@ -145,6 +146,35 @@ h2 {
 }
 .button-2:hover{
     color: #47645F;
+}
+
+
+.page-2{
+    margin: 0px 200px;
+    background-color: #fff;
+   
+    padding: 15px 100px;
+
+}
+.photo-2{
+    margin: -3px;
+    background-color: #F2F2F2;
+}
+.photo-description{
+    margin: 0;
+    background-color: #47645F;
+    padding: 10px;
+}
+.photo-description p{
+        margin: 0;
+}
+.photo-description p:nth-of-type(1){
+    color:#fff;
+    
+}
+.photo-description p:nth-of-type(2){
+    color: #5D7470;
+    
 }
 
    
