@@ -1,180 +1,218 @@
-
-
-body{
-    background-color: #334A44;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+body {
+  background-color: #334a44;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.page-1{
-    margin: 100px 200px 0;
-    background-color: #47645F;
-    
-    padding: 15px 100px;
+.page-1 {
+  margin: 100px 200px 0;
+  background-color: #47645f;
+
+  padding: 0 100px;
 }
 
-ul{
-    
-    display:flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
-    justify-content: flex-end;
-  
-    
-    
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
-nav{
-    font-size: 20px;
-    padding: 5px;
-    margin: 10px;
-    background-image: url(resources/logo-1.JPG);
-    height: 80px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
+nav {
+  font-size: 20px;
+  padding: 5px;
+  margin: 10px;
+  background-image: url(resources/logo-1.JPG);
+  height: 65px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left 20px;
 }
-ul li{
-    
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    text-transform: uppercase;
-    font-family: sans-serif;
-    padding: 15px;  
-
+ul li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  padding: 15px;
 }
-li a{
-    text-decoration: none;
-    color: #fff;
-    
+li a {
+  text-decoration: none;
+  color: #fff;
 }
-li a:hover{
-    color: #000;
+li a:hover {
+  color: #000;
 }
-
 
 h2 {
-    line-height: 50px;
-    margin-top: 100px;
-    width: 60%;
-    font-family: serif;
-    text-transform: uppercase;
-    font-weight: normal;
-    font-size: 30px;
-    color: #fff;
-    
-    
+  line-height: 50px;
+  margin-top: 100px;
+  width: 45%;
+  font-family: serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 40px;
+  color: #fff;
 }
 
-
-.section-1{
-    
-    background-image: url(resources/photo-1.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-    
+.section-1 {
+  background-image: url(resources/photo-1.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  height: 750px;
 }
 
 .section-1 > p {
-    
-    width: 60%;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    font-weight: normal;
-    font-size: 1em;
-    color: #fff;
+  width: 45%;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1em;
+  color: #fff;
 }
-.buttons{
-    box-shadow: wheat ;
-    width: 45%;
-    height: 170px;
-    background-color: #fff;
-    margin: 10px 0;
-    padding: 0;
-    text-align: center;
-    
+.buttons {
+  box-shadow: wheat;
+  width: 45%;
+  height: 170px;
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 0;
+  text-align: center;
 }
-.buttons p{
-    font-weight: bold;
-    font-size: 1.2em;
-    color:  #47645F;
-    text-align: left;
-    padding: 20px 0 10px 20px;
-    
-    
+.buttons p {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #47645f;
+  text-align: left;
+  padding: 20px 0 10px 20px;
 }
-.buttons a{
-   
-    text-decoration: none;
-    color: #000;
-    border-radius: 5px;
-    text-transform: capitalize;
-    font-size: 16px;
-    border: #000 0.5px solid;
-    width: 10%;
-    height: 20px;
-    background-color: #fff;
-    text-align: center;
-     margin: 20px;
-    padding: 10px;
-    
-    
-}
-   
-.buttons-2{
-    display: flex;
-    flex-flow: row;
-    justify-content: flex-start;
-    
+.buttons a {
+  text-decoration: none;
+  color: #000;
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-size: 16px;
+  border: #000 0.5px solid;
+  width: 10%;
+  height: 20px;
+  background-color: #fff;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
 }
 
-.button-1{
-    text-decoration: none;
-    background-color: none;
-    border: #fff 1px solid;
-    width: 100px;
-    height: 20x;
-    color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 10px;
-    border-radius: 20px;
-    margin: 0 20px;
-    
-}
-.button-1:hover{
-    color: #000;
-}
-.button-2:hover{
-    color: #47645F;
+.buttons-2 {
+  display: flex;
+  padding: 10px;
 }
 
-
-.page-2{
-    margin: 0px 200px;
-    background-color: #fff;
-   
-    padding: 15px 100px;
-
+.button-1 {
+  text-decoration: none;
+  background-color: none;
+  border: #fff 1px solid;
+  width: 100px;
+  height: 20x;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 0 20px;
 }
-.photo-2{
-    margin: -3px;
-    background-color: #F2F2F2;
+.button-1:hover {
+  color: #000;
 }
-.photo-description{
-    margin: 0;
-    background-color: #47645F;
-    padding: 10px;
-}
-.photo-description p{
-        margin: 0;
-}
-.photo-description p:nth-of-type(1){
-    color:#fff;
-    
-}
-.photo-description p:nth-of-type(2){
-    color: #5D7470;
-    
+.button-2:hover {
+  color: #47645f;
 }
 
-   
+.page-2 {
+  margin: 0px 200px;
+  background-color: #fff;
+
+  padding: 15px 100px 100px 100px;
+}
+.photo-2 {
+  margin: 60px 0 0 0;
+  background-color: #f2f2f2;
+  display: block;
+}
+.photo-description-3 {
+  margin: 0;
+  background-color: #47645f;
+  padding: 10px;
+  width: 200px;
+  padding: 15px;
+  text-align: center;
+}
+.photo-description-3 p {
+  margin: 0;
+}
+.photo-description-3 p:nth-of-type(1) {
+  color: #fff;
+}
+.photo-description-3 p:nth-of-type(2) {
+  color: #5d7470;
+}
+.photo-description-1 {
+  display: flex;
+  flex-flow: row;
+  flex-shrink: 1;
+  margin: 0;
+  background-color: none;
+  padding: 0;
+}
+.photo-description-1 p:nth-of-type(1) {
+  text-transform: initial;
+  color: #000;
+  font-size: 44px;
+  margin: 0;
+}
+.photo-description-2 p span {
+  color: #5d7470;
+}
+.photo-description-1 p:nth-of-type(2) {
+  color: #5d7470;
+  margin: 0;
+  font-size: 23px;
+}
+
+.photo-description-1 p:nth-of-type(3) {
+  color: #5d7470;
+  font-size: 20px;
+  line-height: 40px;
+  margin-bottom: 40px;
+}
+.photo-description-2 {
+  width: 70%;
+  margin: 200px 10px 0 90px;
+}
+.buttons-3 {
+  margin: 20;
+}
+.buttons-3 a:first-child {
+  text-align: center;
+  text-decoration: none;
+  background-color: #47645f;
+  color: #fff;
+  text-transform: uppercase;
+
+  padding: 12px;
+  border-radius: 35px;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.buttons-3 a:last-child {
+  text-decoration: none;
+  background-color: #fff;
+  color: #47645f;
+  text-transform: capitalize;
+  margin: 0 40px;
+  padding: 12px;
+  border-radius: 35px;
+  font-size: 14px;
+}
+.buttons-3 a:hover {
+  color: #000;
+  border: 1px #000 solid;
+}
