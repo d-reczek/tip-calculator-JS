@@ -102,6 +102,7 @@ h2 {
 .buttons-2 {
   display: flex;
   padding: 10px;
+  margin: 0;
 }
 
 .button-1 {
@@ -115,7 +116,7 @@ h2 {
   text-align: center;
   padding: 10px;
   border-radius: 20px;
-  margin: 0 20px;
+  margin: 0 20px 0 20px;
 }
 .button-1:hover {
   color: #000;
