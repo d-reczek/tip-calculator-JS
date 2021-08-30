@@ -2,8 +2,10 @@ body {
   background-color: #334a44;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.all-page {
+  margin: 100px 200px;
+}
 .page-1 {
-  margin: 100px 200px 0;
   background-color: #47645f;
 
   padding: 0 100px;
@@ -126,23 +128,19 @@ h2 {
 }
 
 .page-2 {
-  margin: 0px 200px;
   background-color: #fff;
 
   padding: 15px 100px 100px 100px;
 }
 .photo-2 {
   background: #f2f2f2 url(resources/photo-2.png) no-repeat;
- display: block;
+  display: block;
   background-size: contain;
   background-position: left;
   padding: 0;
   margin: 0;
   width: 90%;
   height: 100vh;
-
-
- 
 }
 .photo-description-3 {
   margin: 0;
@@ -225,3 +223,45 @@ h2 {
   color: #000;
   border: 1px #000 solid;
 }
+.page-3 {
+  background: #eaeaea;
+  height: 60vh;
+}
+.page-3 p {
+  margin: 0;
+  text-align: center;
+  color: #455a57;
+  font-size: 70px;
+  padding-top: 200px;
+}
+.page-4{
+  background: #47645F url(resources/photo-3.jpg) no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 100vh;
+}
+.page-4 p{
+  
+  font-size: 120px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: lighter;
+  text-align: center;
+}
+.page-4 P:nth-child(1){
+  padding-top: 225px;
+text-align: left;
+margin-left: 250px;
+}
+
+.page-4 P:nth-child(2){
+  padding: 0;
+  
+  }
+.page-4 P:nth-child(3){
+  padding: 0;
+  text-align: right;
+  margin-right: 250px;
+  }
+
