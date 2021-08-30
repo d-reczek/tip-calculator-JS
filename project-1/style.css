@@ -132,9 +132,17 @@ h2 {
   padding: 15px 100px 100px 100px;
 }
 .photo-2 {
-  margin: 60px 0 0 0;
-  background-color: #f2f2f2;
-  display: block;
+  background: #f2f2f2 url(resources/photo-2.png) no-repeat;
+ display: block;
+  background-size: contain;
+  background-position: left;
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  height: 100vh;
+
+
+ 
 }
 .photo-description-3 {
   margin: 0;
