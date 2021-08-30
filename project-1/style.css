@@ -27,7 +27,7 @@ nav {
   background-size: contain;
   background-position: left 20px;
 }
-ul li {
+.navigation-buttons li {
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -35,11 +35,11 @@ ul li {
   font-family: sans-serif;
   padding: 15px;
 }
-li a {
+.navigation-buttons li a{
   text-decoration: none;
   color: #fff;
 }
-li a:hover {
+.navigation-buttons li a:hover {
   color: #000;
 }
 
@@ -232,36 +232,82 @@ h2 {
   text-align: center;
   color: #455a57;
   font-size: 70px;
-  padding-top: 200px;
+  padding-top: 100px;
 }
-.page-4{
-  background: #47645F url(resources/photo-3.jpg) no-repeat;
+.page-4 {
+  background: #47645f url(resources/photo-3.jpg) no-repeat;
   background-size: contain;
   background-position: center;
   height: 100vh;
 }
-.page-4 p{
-  
-  font-size: 120px;
+.page-4 p {
+  padding: 0;
+  font-size: 80px;
   color: #fff;
   text-transform: uppercase;
   font-family: sans-serif;
   font-weight: lighter;
   text-align: center;
+  margin: 0;
 }
-.page-4 P:nth-child(1){
-  padding-top: 225px;
-text-align: left;
-margin-left: 250px;
+.page-4 P:nth-child(1) {
+  padding-top: 300px;
+  text-align: left;
+  margin-left: 250px;
 }
 
-.page-4 P:nth-child(2){
+.page-4 P:nth-child(2) {
   padding: 0;
-  
-  }
-.page-4 P:nth-child(3){
+}
+.page-4 P:nth-child(3) {
   padding: 0;
   text-align: right;
   margin-right: 250px;
-  }
+}
 
+footer {
+  background: #2b3942;
+  color: #fff;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+}
+
+.footer-header {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+.links{
+ 
+  flex: 1 0 100px;
+}
+
+.links-a{
+  display: block;
+  text-align: right;
+  column-count: 2;
+
+  
+}
+.links-a li {
+list-style-type: none;
+}
+.links-a li a{
+  text-decoration: none;
+  color: #000;
+ 
+  padding: 5px;
+  color: #fff;
+}
+.gift {
+  background-color: purple;
+  flex: 1 0 100px;
+}
+.shop {
+  background-color: orange;
+
+  flex: 1 0 100px;
+}
