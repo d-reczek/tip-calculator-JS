@@ -21,11 +21,9 @@ nav {
   font-size: 20px;
   padding: 5px;
   margin: 10px;
-  background-image: url(resources/logo-1.JPG);
-  height: 65px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: left 20px;
+  background: url(resources/logo-1.JPG) no-repeat;
+   background-size: contain;
+  background-position: left top;
 }
 .navigation-buttons li {
   padding: 0;
@@ -35,7 +33,7 @@ nav {
   font-family: sans-serif;
   padding: 15px;
 }
-.navigation-buttons li a{
+.navigation-buttons li a {
   text-decoration: none;
   color: #fff;
 }
@@ -239,10 +237,13 @@ h2 {
   background-size: contain;
   background-position: center;
   height: 50vh;
- 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .page-4 p {
-  padding: 0;
+padding: 0;
   font-size: 80px;
   color: #fff;
   text-transform: uppercase;
@@ -250,117 +251,118 @@ h2 {
   font-weight: lighter;
   text-align: center;
   margin: 0;
+
 }
 .page-4 P:nth-child(1) {
-  padding-top: 15%;
-  text-align: left;
-  margin-left: 250px;
+  b
+  display: block;
+  margin-right: 50%;
+  
 }
 
 .page-4 P:nth-child(2) {
+  
   padding: 0;
+
+
 }
 .page-4 P:nth-child(3) {
   padding: 0;
-  text-align: right;
-  margin-right: 250px;
+ 
+  
+  margin-left: 50%;
+  
 }
+
+
 
 footer {
   background: #2b3942;
+
   color: #fff;
 }
 .footer-content {
+  background: url(resources/footer-logo.JPG) no-repeat;
+  background-size: 10%;
+  background-position: 3% 0;
+ 
+  
   display: flex;
   justify-content: center;
-  height: 300px;
   padding: 6% 6% 0 6%;
-
 }
 
 .footer-header {
-  
   text-transform: uppercase;
   color: #fff;
   text-align: left;
-  
- 
 }
-.links{
- 
+.links {
   flex: 3 0 100px;
-  padding:0;
+  padding: 0;
   margin: 0 5%;
 }
-.links p:first-child{
+.links p:first-child {
   margin-left: 15%;
-  
-  
 }
 
-.links-a{
-  
+.links-a {
   padding: 0;
   display: block;
   column-count: 2;
-  margin-left: 15%; 
+  margin-left: 15%;
 }
 .links-a li {
-list-style-type: none;
+  list-style-type: none;
 }
-.links-a li a{
+.links-a li a {
   text-decoration: none;
-  color: #000;
+  
   padding: 5px;
   color: #fff;
 }
 .gift {
-  
-  
   flex: 2 0 100px;
   margin: 0 5%;
-  
 }
-.gift a{
+.gift a {
   text-decoration: none;
-  
-  
+
 }
-#special-link{
- text-decoration: underline;
- color: #fff;
+.gift p{
+  color: #fff;
 }
-#refere-button{
+#special-link {
+  text-decoration: underline;
+  color: #fff;
+}
+#refere-button {
   display: inline-block;
   background: #fff;
+  color: #2b3942;
   border-radius: 25px;
-  padding: 10px;
+  padding: 7px;
   text-transform: uppercase;
   font-size: 20px;
 }
 .shop {
-  
   flex: 1 0 100px;
   margin: 0 5%;
- 
- 
 }
-.book-photo-1{
+.book-photo-1 {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.book-photo-2{
-  
-  
+.book-photo-2 {
   background: url(resources/book-photo.JPG) no-repeat;
   background-size: contain;
   width: 160px;
-  height: 200px
+  height: 200px;
 }
-.foot-end{
+.foot-end {
  
+  color: rgb(180, 180, 180, 0.7);
   margin: 1%;
   padding: 1%;
 }
