@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    background: #000;
+}
+.section-1{
+    background: #fff;
+    margin: 0 200px;
+}
+nav{
+    display: flex;
+   
+    justify-content: space-between;
+}
+.navigation.logo{
+    background: url(resources/logo-navi.jpg) no-repeat;
+    background-size: 100%;
+    width: 100px;
+    height: 50px;
+    
+}
+.navigation{
+    margin-top: 30px;
+   height: 30px;
+   width: 30px;
+}
+.menu{
+    display: flex;
+}
+.menu a{
+    text-decoration: none;
+    color: #000;
+}
+.menu p{
+    padding-right: 5px;
+    margin-top: 30px 0;
+    font-size: 30px;
+  
+}
+.navigation.search{
+    background: url(resources/search.svg) no-repeat;
+    background-size: contain;
+    text-indent: -99999px;
+    
+}
+.navigation.menu{
+    background: url(resources/menu.svg) no-repeat;
+    background-size: contain;
+    
+}
