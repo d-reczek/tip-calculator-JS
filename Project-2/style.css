@@ -1,49 +1,81 @@
-body{
-    margin: 0;
-    background: #000;
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #000;
 }
-.section-1{
-    background: #fff;
-    margin: 0 200px;
+.section-1 {
+  background: #fff;
+  margin: 0 200px;
 }
-nav{
-    display: flex;
-   
-    justify-content: space-between;
+nav {
+  display: flex;
+
+  justify-content: space-between;
 }
-.navigation.logo{
-    background: url(resources/logo-navi.jpg) no-repeat;
-    background-size: 100%;
-    width: 100px;
-    height: 50px;
-    
+.navigation.logo {
+  background: url(resources/logo-navi.jpg) no-repeat;
+  background-size: 100%;
+  width: 100px;
+  height: 50px;
 }
-.navigation{
-    margin-top: 30px;
-   height: 30px;
-   width: 30px;
+.navigation {
+  margin-top: 19px;
+  height: 15px;
+  width: 15px;
 }
-.menu{
-    display: flex;
+.menu {
+  display: flex;
 }
-.menu a{
-    text-decoration: none;
-    color: #000;
+.menu a {
+  margin: 0;
+  text-decoration: none;
+  color: #000;
 }
-.menu p{
-    padding-right: 5px;
-    margin-top: 30px 0;
-    font-size: 30px;
-  
+.menu p {
+  padding-right: 5px;
+  margin-top: 15px 0;
+  font-size: 15px;
 }
-.navigation.search{
-    background: url(resources/search.svg) no-repeat;
-    background-size: contain;
-    text-indent: -99999px;
-    
+.navigation.search {
+  background: url(resources/search.svg) no-repeat;
+  background-size: contain;
+  text-indent: -9999px;
+  display: inline-block;
 }
-.navigation.menu{
-    background: url(resources/menu.svg) no-repeat;
-    background-size: contain;
-    
+.navigation.menu {
+  background: url(resources/menu.svg) no-repeat;
+  background-size: contain;
+}
+.page-1 {
+  display: flex;
+  align-items: center;
+}
+.page-1-p {
+  margin: 0 6%;
+  padding: 5%;
+}
+
+.page-1-p p {
+  color: #000;
+  padding: 0;
+  margin: 0;
+}
+.page-1-p-1 {
+  font-size: 50px;
+}
+.page-1-p-2 {
+  font-size: 60px;
+  margin: 0;
+}
+.scroll {
+  font-size: 15px;
+  text-align: center;
+}
+.arrow {
+  background: url(resources/arrow.svg) no-repeat;
+  background-size: contain;
+
+  text-align: center;
+  width: 25px;
+  height: 25px;
 }
