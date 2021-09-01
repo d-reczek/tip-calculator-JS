@@ -57,7 +57,7 @@ h2 {
 .section-1 {
   background-image: url(resources/photo-1.png);
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: left;
   background-size: contain;
   height: 750px;
 }
