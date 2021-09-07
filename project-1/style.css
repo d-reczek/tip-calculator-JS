@@ -1,11 +1,13 @@
-
+/* podzielic na pliki poszczegolne sekcje */
 body {
   font-family: 'Lato', sans-serif;
   background-color: #334a44;
   
 }
 .all-page {
-  margin: 100px 200px;
+  margin: 0 auto;
+  max-width: 1200px;
+  /* margin: 100px 200px; */
 }
 .page-1 {
   background-color: #47645f;
@@ -43,7 +45,7 @@ nav {
 }
 
 h2 {
-  
+  /* 45%?? raczej dla konkretnej klasy naglowka a nie wszystkich naglowkow*/
   line-height: 50px;
   margin-top: 100px;
   width: 45%;
@@ -57,7 +59,7 @@ h2 {
 .section-1 {
   background-image: url(resources/photo-1.png);
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: right;
   background-size: contain;
   height: 750px;
 }
@@ -161,7 +163,7 @@ h2 {
 .photo-description-1 {
   display: flex;
   flex-flow: row;
-  flex-shrink: 1;
+  /* flex-shrink: 1; niepotrzebne*/
   margin: 0;
   background-color: none;
   padding: 0;
@@ -262,7 +264,7 @@ padding: 0;
 }
 
 .page-4 P:nth-child(2) {
-  
+  /* sprawdz padding */
   padding: 0;
 
 
@@ -312,7 +314,8 @@ footer {
   display: block;
   column-count: 2;
   margin-left: 15%;
-}
+/* }
+selektor grupowy, */
 .links-a li {
   list-style-type: none;
 }
