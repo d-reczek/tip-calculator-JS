@@ -16,10 +16,10 @@
   </head>
 
   <body>
-    <div class="all-page">
-      <div class="page-1">
+    <main class="all-page">
+      <section class="page-1">
         <nav>
-          <ul class="navigation-buttons">
+          <ul class="navigation-container">
             <li><a href="#">About</a></li>
             <li><a href="#"> Start here</a></li>
             <li><a href="#"> Work with me</a></li>
@@ -30,9 +30,9 @@
         </nav>
         <!-- <hr>w css -->
         <!-- zamienic section na header -->
-        <section class="section-1">
+        <header class="section-1">
           <!-- h2 na h1 -->
-          <h1>Empowerment to an unstoppabble life!</h1>
+          <h1 class="page-1-title">Empowerment to an unstoppabble life!</h1>
           <p>Resilience | Inner power | Inner power</p>
           <div class="link-container-white-box">
             <p>Your Journey begins! Get 21 Beginners'</p>
@@ -43,15 +43,15 @@
             <a href="#" class="link-rounded">Read</a>
             <a href="#" class="link-rounded">Watch</a>
           </div>
-        </section>
-      </div>
+        </header>
+      </section>
       <!-- page 1.. na section zamienic nie uzywac divov -->
       <!-- zrobic dwa kontenery jeden ze zdjecie i opisem zdjecia a drugi z tekstem -->
-      <div class="page-2">
+      <section class="page-2">
         <!-- <div class="photo-description-1"> -->
         <!-- zdjecie jako img -->
         <div class="photo-2">
-          <img src="resources/photo-2.png" alt="" />
+          <img src="resources/photo-2.png" alt="women" />
           <div class="photo-2-description">
             <p>Poonam Vijay Thakkar</p>
             <p>Strong Mind COach</p>
@@ -73,22 +73,24 @@
           </div>
         </div>
         <!-- </div> -->
-      </div>
-      <div class="page-3">
+      </section>
+      <section class="page-3">
         <!-- dobudować kontenery na slajder -->
         <p>Brands Worked With</p>
-      </div>
-      <div class="page-4">
+      </section>
+      <section class="page-4">
         <!-- sprobowac przerobic na jeden p i uzywac span -->
-        <p>build a</p>
+        <p><span>Build</span> <span>a strong</span> <span>mind</span></p>
+        <!-- <p>build a</p>
         <p>strong</p>
-        <p>mind</p>
-      </div>
+        <p>mind</p> -->
+      </section>
+
       <footer>
         <div class="footer-content">
           <div class="links">
             <!-- naglowek  footer header zamienic -->
-            <p class="footer-header">quick links</p>
+            <h3 class="footer-header">quick links</h3>
             <ul class="links-a">
               <li><a href="">Press & Media</a></li>
               <li><a href="">Community</a></li>
@@ -100,28 +102,31 @@
               <li><a href="">Shop</a></li>
             </ul>
           </div>
-          <hr />
+          <!-- <hr /> -->
           <div class="gift">
-            <p class="footer-header">free gift</p>
+            <h3 class="footer-header">free gift</h3>
             <p>
               <a id="special-link" href="#">Link</a> to 21 Beginners Strategies
               - Download Free E-Book Now
             </p>
             <div id="refere-button">
-              <a id="refere-button" href="">Refere</a>
+              <a id="refere-link" href="">Refere</a>
             </div>
           </div>
-          <hr />
+          <!-- <hr /> -->
           <div class="shop">
             <!-- ksiazka jako img -->
-            <p class="footer-header">shop books</p>
-            <div class="book-photo-1"></div>
-            <div class="book-photo-2"></div>
+            <h3 class="footer-header">shop books</h3>
+            <div class="book-photo">
+              <img src="resources/book-photo.JPG" alt="book" />
+            </div>
           </div>
         </div>
-        <hr />
-        <p class="foot-end">&copy; 2020 All Rights Reserved</p>
+        <div class="footer-end">
+          <!-- <hr /> -->
+          <p>&copy; 2020 All Rights Reserved</p>
+        </div>
       </footer>
-    </div>
+    </main>
   </body>
 </html>
