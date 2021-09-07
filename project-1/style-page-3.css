@@ -1,0 +1,11 @@
+.page-3 {
+  background: #eaeaea;
+  height: 30vh;
+}
+.page-3 p {
+  margin: 0;
+  text-align: center;
+  color: #455a57;
+  font-size: 70px;
+  padding-top: 100px;
+}
