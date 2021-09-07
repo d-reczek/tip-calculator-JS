@@ -44,13 +44,12 @@ nav {
   color: #000;
 }
 
-h2 {
+h1 {
   /* 45%?? raczej dla konkretnej klasy naglowka a nie wszystkich naglowkow*/
   line-height: 50px;
   margin-top: 100px;
   width: 45%;
-  
-  text-transform: uppercase;
+    text-transform: uppercase;
   font-weight: lighter;
   font-size: 40px;
   color: #fff;
@@ -71,7 +70,7 @@ h2 {
   font-size: 1em;
   color: #fff;
 }
-.buttons {
+.link-container-white-box {
   box-shadow: wheat;
   width: 45%;
   height: 170px;
@@ -80,14 +79,14 @@ h2 {
   padding: 0;
   text-align: center;
 }
-.buttons p {
+.link-container-white-box p {
   font-weight: bold;
   font-size: 1.2em;
   color: #47645f;
   text-align: left;
   padding: 20px 0 10px 20px;
 }
-.buttons a {
+.link-container-white-box a {
   text-decoration: none;
   color: #000;
   border-radius: 5px;
@@ -102,13 +101,13 @@ h2 {
   padding: 10px;
 }
 
-.buttons-2 {
+.link-container-under-white-box {
   display: flex;
   padding: 10px;
   margin: 0;
 }
 
-.button-1 {
+.link-rounded {
   text-decoration: none;
   background-color: none;
   border: #fff 1px solid;
@@ -124,16 +123,14 @@ h2 {
 .button-1:hover {
   color: #000;
 }
-.button-2:hover {
-  color: #47645f;
-}
 
 .page-2 {
   background-color: #fff;
-
   padding: 15px 100px 100px 100px;
+  display: flex;
 }
-.photo-2 {
+
+/* .photo-2 {
   background: #f2f2f2 url(resources/photo-2.png) no-repeat;
   display: block;
   background-size: contain;
@@ -142,8 +139,8 @@ h2 {
   margin: 0;
   width: 90%;
   height: 100vh;
-}
-.photo-description-3 {
+} */
+.photo-2-description {
   margin: 0;
   background-color: #47645f;
   padding: 10px;
@@ -151,66 +148,65 @@ h2 {
   padding: 15px;
   text-align: center;
 }
-.photo-description-3 p {
+.photo-2-description p {
   margin: 0;
 }
-.photo-description-3 p:nth-of-type(1) {
+.photo-2-description p:nth-of-type(1) {
   color: #fff;
 }
-.photo-description-3 p:nth-of-type(2) {
+.photo-2-description p:nth-of-type(2) {
   color: #5d7470;
 }
-.photo-description-1 {
+/* .photo-description-1 {
   display: flex;
   flex-flow: row;
-  /* flex-shrink: 1; niepotrzebne*/
+   flex-shrink: 1; niepotrzebne
   margin: 0;
   background-color: none;
   padding: 0;
+} */
+.photo-right-description {
+  width: 70%;
+  margin: 100px 50px;
 }
-.photo-description-1 p:nth-of-type(1) {
+h2 {
   text-transform: initial;
   color: #000;
   font-size: 44px;
   margin: 0;
 }
-.photo-description-2 p span {
+.photo-right-description h2 span {
   color: #5d7470;
 }
-.photo-description-1 p:nth-of-type(2) {
+.photo-right-description p:nth-of-type(1) {
   color: #5d7470;
   margin: 0;
   font-size: 23px;
 }
 
-.photo-description-1 p:nth-of-type(3) {
+.photo-right-description p:nth-of-type(2) {
   color: #5d7470;
   font-size: 20px;
   line-height: 40px;
   margin-bottom: 40px;
 }
-.photo-description-2 {
-  width: 70%;
-  margin: 200px 10px 0 90px;
-}
-.buttons-3 {
+
+.link-container-right-photo-description {
   margin: 20;
 }
-.buttons-3 a:first-child {
+.link-container-right-photo-description a:first-child {
   text-align: center;
   text-decoration: none;
   background-color: #47645f;
   color: #fff;
   text-transform: uppercase;
-
   padding: 12px;
   border-radius: 35px;
-
   font-size: 14px;
   letter-spacing: 1px;
 }
 
-.buttons-3 a:last-child {
+.link-container-right-photo-description a:last-child {
   text-decoration: none;
   background-color: #fff;
   color: #47645f;
@@ -220,7 +216,7 @@ h2 {
   border-radius: 35px;
   font-size: 14px;
 }
-.buttons-3 a:hover {
+.link-container-right-photo-description a:hover {
   color: #000;
   border: 1px #000 solid;
 }
