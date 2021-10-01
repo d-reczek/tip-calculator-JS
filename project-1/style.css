@@ -1,12 +1,13 @@
 :root {
   --main-bcg: #334a44;
   --line-color: rgb(180, 180, 180, 0.2);
-  --foote-text-color: rgb(180, 180, 180, 0.3);
+  --foote-text-color: rgb(180, 180, 180, 0.7);
   --svg-color: invert(100%) sepia(0%) saturate(0%) hue-rotate(14deg)
     brightness(103%) contrast(102%);
   --bcg-in-pages-and-containers: #47645f;
   --page-3-bcg: #eaeaea;
   --page-6-bcg-color: #475764;
+  --text-color-headers: #516c67;
 }
 
 body {
@@ -284,7 +285,7 @@ h2.h2-page-2 {
   color: #fff;
 }
 .photo-2-description p:nth-of-type(2) {
-  color: #5d7470;
+  color: var(--text-color-headers);
 }
 
 .photo-right-description {
@@ -588,6 +589,21 @@ h3.h3-page-5 {
 }
 .vl {
   border-left: 1px solid var(--line-color);
+}
+.h3-page-8 {
+  text-transform: none;
+  color: var(--text-color-headers);
+}
+.left-p-1 {
+  font-weight: bold;
+  font-size: 1.7rem;
+  padding: 0 5px;
+}
+.left-p-2 {
+  font-weight: lighter;
+  font-style: 1.5rem;
+  padding: 10px 0;
+  color: var(--foote-text-color);
 }
 .left-description-page8-container {
 }
