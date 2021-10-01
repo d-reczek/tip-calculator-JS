@@ -1,0 +1,83 @@
+.page-7 {
+  background: #fff;
+}
+
+.grid-container {
+  margin: 0 auto;
+  padding: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.grid-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 250px;
+  height: 250px;
+  flex-grow: 1;
+}
+.grid-box2,
+.grid-box4 {
+  flex-direction: column;
+}
+.grid-box6,
+.grid-box8 {
+  flex-direction: column-reverse;
+}
+.grid-description {
+  flex-grow: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.grid-container div:nth-child(even) {
+  background-color: #47645f;
+}
+.grid-container div:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+.grid-box1 {
+  background-image: url(./resources/grid-photo-1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  order: 1;
+}
+.grid-box2 {
+  order: 2;
+}
+.grid-box3 {
+  background-image: url(./resources/grid-photo-3.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  order: 3;
+}
+.grid-box4 {
+  order: 4;
+}
+.grid-box5 {
+  background-image: url(./resources/grid-photo-2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  order: 6;
+}
+.grid-box6 {
+  order: 5;
+}
+
+.grid-box7 {
+  background-image: url(./resources/grid-photo-4.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  order: 8;
+}
+.grid-box8 {
+  order: 7;
+}
+.grid-description {
+  color: #fff;
+  text-transform: uppercase;
+  align-self: center;
+}
