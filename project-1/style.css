@@ -316,7 +316,7 @@ h2.h2-page-2 {
 .link-container-right-photo-description {
   margin: 20;
 }
-.link-container-right-photo-description a:first-child {
+.link-with-main-bcg-color {
   text-align: center;
   text-decoration: none;
   background-color: var(--bcg-in-pages-and-containers);
@@ -685,4 +685,31 @@ h3.h3-page-5 {
   height: 200px;
   border: 1px solid #000;
   /* flex-grow: 1; */
+}
+
+/* STYLE PAGE-11 */
+.page-11 {
+  background-color: #fff;
+}
+.h3-page-11 {
+  color: var(--text-color-headers);
+  text-align: center;
+}
+.gallery-with-opinion {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px 60px;
+}
+.gallery-opinion-item-box {
+  border: 1px solid #000;
+  width: 200px;
+  height: 250px;
+}
+.link-strong-mind-container {
+  text-align: center;
+}
+.link-strong-mind {
+  margin: 20px auto;
+  display: inline-block;
 }
