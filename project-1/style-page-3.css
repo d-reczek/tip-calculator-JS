@@ -3,12 +3,9 @@
   padding: 30px 60px;
   /* height: 30vh; */
 }
-.page-3 p {
-  /* margin: 20px; */
+h3.h3-page-3 {
   text-align: center;
   color: #455a57;
-  font-size: 70px;
-  /* padding-top: 100px; */
 }
 .slider-container {
   display: flex;

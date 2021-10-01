@@ -26,12 +26,7 @@
   width: 70%;
   margin: 100px 50px;
 }
-h2 {
-  text-transform: initial;
-  color: #000;
-  font-size: 44px;
-  margin: 0;
-}
+
 .photo-right-description h2 span {
   color: #5d7470;
 }

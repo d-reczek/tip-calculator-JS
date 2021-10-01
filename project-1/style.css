@@ -13,6 +13,17 @@ h1 {
   font-size: 40px;
   color: #fff;
 }
+h2 {
+  text-transform: initial;
+  color: #000;
+  font-size: 44px;
+  margin: 0;
+}
+h3 {
+  font-size: 30px;
+  text-transform: capitalize;
+  margin: 20px;
+}
 
 footer {
   background-color: #2b3942;
@@ -40,7 +51,7 @@ footer {
   padding: 0;
   margin: 0 5%;
 }
-.links h3:first-child {
+.links h5:first-child {
   margin-left: 15%;
 }
 
