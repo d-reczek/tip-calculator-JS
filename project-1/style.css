@@ -135,7 +135,9 @@ footer {
   margin-right: 5%;
 }
 
-
+.icons-list {
+  display: flex;
+}
 .icons-list-item {
   padding: 5px;
 }
