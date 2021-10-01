@@ -647,6 +647,12 @@ h3.h3-page-5 {
   align-self: flex-end;
 }
 /* STYLE PAGE-9 */
+.photo-page-9 {
+  width: 100%;
+  height: 130vh;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* STYLE PAGE-10 */
 .page-10 {
@@ -654,8 +660,10 @@ h3.h3-page-5 {
   margin: 0;
 }
 .list-page-10 {
+  margin: 0;
   display: flex;
-  padding: 80px;
+  padding: 30px;
+  padding-top: 60px;
 }
 .list-page-10-item a {
   text-decoration: none;
@@ -665,4 +673,16 @@ h3.h3-page-5 {
 }
 .list-page-10-item a:hover {
   color: var(--text-color-headers);
+}
+
+.page-10-gallery-container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 30px 60px;
+}
+.page-10-gallery-box {
+  min-width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  /* flex-grow: 1; */
 }
