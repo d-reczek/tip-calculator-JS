@@ -647,9 +647,13 @@ h3.h3-page-5 {
   align-self: flex-end;
 }
 /* STYLE PAGE-9 */
+.page-9 {
+  background-color: #fff;
+}
+
 .photo-page-9 {
+  padding: 1%;
   width: 100%;
-  height: 130vh;
   object-fit: cover;
   object-position: center;
 }
