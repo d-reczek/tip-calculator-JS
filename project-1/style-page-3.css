@@ -1,11 +1,36 @@
 .page-3 {
   background: #eaeaea;
-  height: 30vh;
+  padding: 30px 60px;
+  /* height: 30vh; */
 }
 .page-3 p {
-  margin: 0;
+  /* margin: 20px; */
   text-align: center;
   color: #455a57;
   font-size: 70px;
-  padding-top: 100px;
+  /* padding-top: 100px; */
+}
+.slider-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.slider-box {
+  background-color: #fff;
+  height: 200px;
+  width: 200px;
+}
+.box-1 {
+  /* position: absolute; */
+}
+.slider-icons-container {
+  align-self: center;
+}
+.scroll-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.scroll-icon-img {
+  height: 50px;
 }
