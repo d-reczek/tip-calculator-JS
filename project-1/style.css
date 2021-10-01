@@ -7,6 +7,7 @@
   --bcg-in-pages-and-containers: #47645f;
   --page-3-bcg: #eaeaea;
   --page-6-bcg-color: #475764;
+  --page-8-bcg-color: #eeeeee;
   --text-color-headers: #516c67;
 }
 
@@ -579,7 +580,7 @@ h3.h3-page-5 {
 /* STYLE PAGE-8 */
 
 .page-8 {
-  background: #eeeeee;
+  background: var(--page-8-bcg-color);
 }
 .page-8-content {
   padding: 60px 10px;
@@ -646,3 +647,22 @@ h3.h3-page-5 {
   align-self: flex-end;
 }
 /* STYLE PAGE-9 */
+
+/* STYLE PAGE-10 */
+.page-10 {
+  background-color: var(--page-8-bcg-color);
+  margin: 0;
+}
+.list-page-10 {
+  display: flex;
+  padding: 80px;
+}
+.list-page-10-item a {
+  text-decoration: none;
+  color: var(--foote-text-color);
+  text-transform: uppercase;
+  padding: 10px;
+}
+.list-page-10-item a:hover {
+  color: var(--text-color-headers);
+}
