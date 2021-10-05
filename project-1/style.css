@@ -11,6 +11,9 @@
   --text-color-headers: #516c67;
 }
 
+/* MAIN STYLES  */
+/* -------------------------------------- */
+
 body {
   font-family: "Lato", sans-serif;
   background-color: var(--main-bcg);
@@ -150,6 +153,7 @@ footer {
 }
 
 /* STYLE PAGE-1 */
+/* -------------------------------------- */
 
 .page-1 {
   background-color: var(--bcg-in-pages-and-containers);
@@ -264,6 +268,7 @@ h1.page-1-title {
 }
 
 /* STYLE PAGE-2 */
+/* -------------------------------------- */
 
 .page-2 {
   background-color: #fff;
@@ -345,11 +350,11 @@ h2.h2-page-2 {
 }
 
 /* STYLE PAGE-3 */
+/* -------------------------------------- */
 
 .page-3 {
   background: var(--page-3-bcg);
   padding: 10px 60px;
-  /* height: 30vh; */
 }
 h3.h3-page-3 {
   text-align: center;
@@ -379,6 +384,7 @@ h3.h3-page-3 {
   height: 50px;
 }
 /* STYLE PAGE-4 */
+/* -------------------------------------- */
 
 .page-4 {
   background: var(--bcg-in-pages-and-containers) url(resources/photo-3.jpg)
@@ -409,6 +415,7 @@ h3.h3-page-3 {
 }
 
 /* STYLE PAGE-5 */
+/* -------------------------------------- */
 
 .page-5 {
   background: #fff;
@@ -445,6 +452,7 @@ h3.h3-page-5 {
 }
 
 /* STYLE PAGE-6 */
+/* -------------------------------------- */
 
 .page-6 {
   background: #fff;
@@ -489,6 +497,7 @@ h3.h3-page-5 {
 }
 
 /* STYLE PAGE-7 */
+/* -------------------------------------- */
 
 .page-7 {
   background: #fff;
@@ -579,6 +588,7 @@ h3.h3-page-5 {
 }
 
 /* STYLE PAGE-8 */
+/* -------------------------------------- */
 
 .page-8 {
   background: var(--page-8-bcg-color);
@@ -648,6 +658,7 @@ h3.h3-page-5 {
   align-self: flex-end;
 }
 /* STYLE PAGE-9 */
+/* -------------------------------------- */
 .page-9 {
   background-color: #fff;
 }
@@ -660,6 +671,7 @@ h3.h3-page-5 {
 }
 
 /* STYLE PAGE-10 */
+/* -------------------------------------- */
 .page-10 {
   background-color: var(--page-8-bcg-color);
   margin: 0;
@@ -689,10 +701,11 @@ h3.h3-page-5 {
   min-width: 200px;
   height: 200px;
   border: 1px solid #000;
-  /* flex-grow: 1; */
 }
 
 /* STYLE PAGE-11 */
+/* -------------------------------------- */
+
 .page-11 {
   background-color: #fff;
 }
