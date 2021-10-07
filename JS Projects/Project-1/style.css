@@ -1,0 +1,13 @@
+.choice {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.choice-item {
+  width: 200px;
+  height: 200px;
+  background: gray;
+  border: 1px solid #000;
+}
