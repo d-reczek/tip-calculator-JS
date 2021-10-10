@@ -1,44 +1,49 @@
 const rockDiv = document.querySelector(".rock");
 const paperDiv = document.querySelector(".paper");
 const scissorsDiv = document.querySelector(".scissors");
+let userChoice = "";
+let computerChoice = "";
 
-function userChoice() {
-  rockDiv.addEventListener("click", () => {
-    // console.log("kliknolem rock");
-    userChoiceItem("rock");
-    computerChoice();
-  });
-  paperDiv.addEventListener("click", () => {
-    console.log("kliknolem paper");
-    userChoiceItem("paper");
-  });
-  scissorsDiv.addEventListener("click", () => {
-    console.log("kliknolem nozyce");
-    userChoiceItem("scissors");
-  });
-}
+rockDiv.addEventListener("click", () => {
+  userChoice = getUserChoiceItem("rock");
+  computerChoice = getComputerChoice();
+});
 
-function userChoiceItem(myChoice) {
-  console.log(myChoice + " user");
-  console.log(myChoice);
+paperDiv.addEventListener("click", () => {
+  userChoice = getUserChoiceItem("paper");
+  computerChoice = getComputerChoice();
+});
+scissorsDiv.addEventListener("click", () => {
+  userChoice = getUserChoiceItem("scissors");
+  computerChoice = getComputerChoice();
+});
+
+function getUserChoiceItem(myChoice) {
+  console.log("user", myChoice);
   return myChoice;
 }
-function computerChoiceItem(compChoice) {
-  console.log(compChoice + " comp");
-  return compChoice;
-}
-userChoice();
 
-function computerChoice() {
+function compare() {
+
+}
+
+// function computerChoiceItem(compChoice) {
+//   console.log("comp", compChoice);
+//   return compChoice;
+// }
+
+function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
   // console.log(randomNumber);
   if (randomNumber === 0) {
-    computerChoiceItem("rock");
+    return "rock";
   }
   if (randomNumber === 1) {
-    computerChoiceItem("paper");
+    return "paper";
   }
   if (randomNumber === 2) {
-    computerChoiceItem("scissors");
+    return "scissors";
   }
 }
+
+
