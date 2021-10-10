@@ -6,6 +6,7 @@ function userChoice() {
   rockDiv.addEventListener("click", () => {
     // console.log("kliknolem rock");
     userChoiceItem("rock");
+    computerChoice();
   });
   paperDiv.addEventListener("click", () => {
     console.log("kliknolem paper");
@@ -16,16 +17,21 @@ function userChoice() {
     userChoiceItem("scissors");
   });
 }
-// userChoice();
 
 function userChoiceItem(myChoice) {
-  //   console.log(myChoice + " user");
+  console.log(myChoice + " user");
+  console.log(myChoice);
+  return myChoice;
+}
+function computerChoiceItem(compChoice) {
+  console.log(compChoice + " comp");
+  return compChoice;
 }
 userChoice();
 
 function computerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
-  console.log(randomNumber);
+  // console.log(randomNumber);
   if (randomNumber === 0) {
     computerChoiceItem("rock");
   }
@@ -36,9 +42,3 @@ function computerChoice() {
     computerChoiceItem("scissors");
   }
 }
-
-// computerChoice();
-// function computerChoiceItem(computerChoice) {
-//   console.log(computerChoice + "   comp");
-// }
-// computerChoice();
