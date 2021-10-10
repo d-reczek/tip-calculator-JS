@@ -1,3 +1,6 @@
+body {
+  font-size: 40px;
+}
 .choice {
   display: flex;
   gap: 5px;
@@ -8,6 +11,19 @@
 .choice-item {
   width: 200px;
   height: 200px;
-  background: gray;
-  border: 1px solid #000;
+  /* background: gray; */
+  /* border: 1px solid #000; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+}
+.rock {
+  background-image: url(./iamges/rock.png);
+}
+.paper {
+  background-image: url(./iamges/paper.png);
+}
+.scissors {
+  background-image: url(./iamges/scissors.png);
 }

@@ -1,14 +1,22 @@
 const rockDiv = document.querySelector(".rock");
 const paperDiv = document.querySelector(".paper");
 const scissorsDiv = document.querySelector(".scissors");
+const resultSpan = document.querySelector(".result");
+const userScoreBoard = document.querySelector(".user-score");
+const computerScoreBoard = document.querySelector(".computer-score");
+let userScore = 0;
+let computerScore = 0;
 let userChoice = "";
 let computerChoice = "";
+let computerChoiceNameChange = "";
 
 rockDiv.addEventListener("click", () => {
   userChoice = getUserChoiceItem("rock");
   computerChoice = getComputerChoice();
+  computerChoiceNameChange = nameChange();
   console.log("user", userChoice);
   console.log("comp", computerChoice);
+  console.log(computerChoiceNameChange);
   compare();
 });
 
@@ -17,6 +25,7 @@ paperDiv.addEventListener("click", () => {
   computerChoice = getComputerChoice();
   console.log("user", userChoice);
   console.log("comp", computerChoice);
+  computerChoiceNameChange = nameChange();
   compare();
 });
 scissorsDiv.addEventListener("click", () => {
@@ -24,6 +33,7 @@ scissorsDiv.addEventListener("click", () => {
   computerChoice = getComputerChoice();
   console.log("user", userChoice);
   console.log("comp", computerChoice);
+  computerChoiceNameChange = nameChange();
   compare();
 });
 
@@ -31,6 +41,19 @@ function getUserChoiceItem(myChoice) {
   // console.log("user", myChoice);
   return myChoice;
 }
+
+function nameChange() {
+  if (computerChoice === "paper") {
+    return "papier";
+  }
+  if (computerChoice === "rock") {
+    return "kamień";
+  }
+  if (computerChoice === "scissors") {
+    return "nożyce";
+  }
+}
+
 function compare() {
   // user WIN
   if (
@@ -39,6 +62,13 @@ function compare() {
     (userChoice === "scissors" && computerChoice === "paper")
   ) {
     console.log("wygrana");
+    // if (computerChoice === "scissors") {
+    //   computerChoice = "nożyce";
+    // }
+    resultSpan.textContent =
+      "Computer wybrał " + computerChoiceNameChange + " Wygrałes :) ";
+    userScore++;
+    userScoreBoard.textContent = userScore;
   }
 
   //user Loser
@@ -48,6 +78,10 @@ function compare() {
     (userChoice === "scissors" && computerChoice === "rock")
   ) {
     console.log("przegrana");
+    resultSpan.textContent =
+      "Computer wybrał " + computerChoiceNameChange + " Przegrałes";
+    computerScore++;
+    computerScoreBoard.textContent = computerScore;
   }
 
   //draw
@@ -57,6 +91,8 @@ function compare() {
     (userChoice === "scissors" && computerChoice === "scissors")
   ) {
     console.log("remis");
+    resultSpan.textContent =
+      "Computer wybrał " + computerChoiceNameChange + " Remis";
   }
 }
 
