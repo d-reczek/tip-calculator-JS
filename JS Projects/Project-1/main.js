@@ -33,37 +33,32 @@ function getUserChoiceItem(myChoice) {
 }
 function compare() {
   // user WIN
-  if (userChoice === "rock" && computerChoice === "scissors") {
+  if (
+    (userChoice === "rock" && computerChoice === "scissors") ||
+    (userChoice === "paper" && computerChoice === "rock") ||
+    (userChoice === "scissors" && computerChoice === "paper")
+  ) {
     console.log("wygrana");
   }
-  if (userChoice === "paper" && computerChoice === "rock") {
-    console.log("wygrana");
-  }
-  if (userChoice === "scissors" && computerChoice === "paper") {
-    console.log("wygrana");
-  }
+
   //user Loser
-  if (userChoice === "rock" && computerChoice === "paper") {
+  if (
+    (userChoice === "rock" && computerChoice === "paper") ||
+    (userChoice === "paper" && computerChoice === "scissors") ||
+    (userChoice === "scissors" && computerChoice === "rock")
+  ) {
     console.log("przegrana");
   }
-  if (userChoice === "paper" && computerChoice === "scissors") {
-    console.log("przegrana");
-  }
-  if (userChoice === "scissors" && computerChoice === "rock") {
-    console.log("przegrana");
-  }
+
   //draw
-  if (userChoice === "rock" && computerChoice === "rock") {
-    console.log("remis");
-  }
-  if (userChoice === "paper" && computerChoice === "paper") {
-    console.log("remis");
-  }
-  if (userChoice === "scissors" && computerChoice === "scissors") {
+  if (
+    (userChoice === "rock" && computerChoice === "rock") ||
+    (userChoice === "paper" && computerChoice === "paper") ||
+    (userChoice === "scissors" && computerChoice === "scissors")
+  ) {
     console.log("remis");
   }
 }
-
 
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
