@@ -32,41 +32,38 @@ function getUserChoiceItem(myChoice) {
   return myChoice;
 }
 function compare() {
-  if (userChoice === "rock" && computerChoice === "paper") {
-    console.log("user", userChoice);
-    console.log("comp", computerChoice);
-    console.log("wygrana");
-  }
+  // user WIN
   if (userChoice === "rock" && computerChoice === "scissors") {
     console.log("wygrana");
-  }
-  if (userChoice === "rock" && computerChoice === "rock") {
-    console.log("remis");
   }
   if (userChoice === "paper" && computerChoice === "rock") {
     console.log("wygrana");
   }
-  if (userChoice === "paper" && computerChoice === "scissors") {
-    console.log("wygrana");
-  }
-  if (userChoice === "paper" && computerChoice === "paper") {
-    console.log("remis");
-  }
   if (userChoice === "scissors" && computerChoice === "paper") {
     console.log("wygrana");
   }
+  //user Loser
+  if (userChoice === "rock" && computerChoice === "paper") {
+    console.log("przegrana");
+  }
+  if (userChoice === "paper" && computerChoice === "scissors") {
+    console.log("przegrana");
+  }
   if (userChoice === "scissors" && computerChoice === "rock") {
     console.log("przegrana");
+  }
+  //draw
+  if (userChoice === "rock" && computerChoice === "rock") {
+    console.log("remis");
+  }
+  if (userChoice === "paper" && computerChoice === "paper") {
+    console.log("remis");
   }
   if (userChoice === "scissors" && computerChoice === "scissors") {
     console.log("remis");
   }
 }
 
-// function computerChoiceItem(compChoice) {
-//   console.log("comp", compChoice);
-//   return compChoice;
-// }
 
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
@@ -81,16 +78,3 @@ function getComputerChoice() {
     return "scissors";
   }
 }
-
-// computerChoice();
-
-// function compare(comaprison) {
-//   console.log("uruchomiona");
-//   if (userChoice() === "rock" && computerChoice() === "rock") {
-//     console.log("remis");
-//   } else {
-//     console.log("blad");
-//   }
-// }
-
-// compare();
