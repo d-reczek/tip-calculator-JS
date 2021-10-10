@@ -1,9 +1,13 @@
 body {
   font-size: 40px;
+  background-image: url(./iamges/zomie-bcg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
 }
 .choice {
   display: flex;
-  gap: 5px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
 }
@@ -12,7 +16,8 @@ body {
   width: 200px;
   height: 200px;
   /* background: gray; */
-  /* border: 1px solid #000; */
+  border: 5px solid #000;
+  border-radius: 100px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
