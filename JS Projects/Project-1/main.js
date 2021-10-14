@@ -4,6 +4,8 @@ const scissorsDiv = document.querySelector(".scissors");
 const resultSpan = document.querySelector(".result");
 const userScoreBoard = document.querySelector(".user-score");
 const computerScoreBoard = document.querySelector(".computer-score");
+const choiceItemDiv = document.querySelector(".choice-item");
+const gameOverDiv = document.querySelector(".game-over")
 let userScore = 0;
 let computerScore = 0;
 let userChoice = "";
@@ -66,9 +68,16 @@ function compare() {
     //   computerChoice = "nożyce";
     // }
     resultSpan.textContent =
-      "Computer wybrał " + computerChoiceNameChange + " Wygrałes :) ";
+      "Przeciwnik wybrał " + computerChoiceNameChange + " WYGRAŁEŚ! :)";
     userScore++;
     userScoreBoard.textContent = userScore;
+    resultSpan.classList.add("win");
+    resultSpan.classList.remove("lose");
+    resultSpan.classList.remove("draw");
+    if (userScore === 3) {
+      resultSpan.textContent = "ugabuga";
+      console.log("wynik" + userScore);
+    }
   }
 
   //user Loser
@@ -79,9 +88,14 @@ function compare() {
   ) {
     console.log("przegrana");
     resultSpan.textContent =
-      "Computer wybrał " + computerChoiceNameChange + " Przegrałes";
+      "Przeciwnik wybrał " +
+      computerChoiceNameChange +
+      " przegrałes";
     computerScore++;
     computerScoreBoard.textContent = computerScore;
+    resultSpan.classList.add("lose");
+    resultSpan.classList.remove("win");
+    resultSpan.classList.remove("draw");
   }
 
   //draw
@@ -92,7 +106,10 @@ function compare() {
   ) {
     console.log("remis");
     resultSpan.textContent =
-      "Computer wybrał " + computerChoiceNameChange + " Remis";
+      "Przeciwnik wybrał " + computerChoiceNameChange + " jest remis";
+    resultSpan.classList.add("draw");
+    resultSpan.classList.remove("win");
+    resultSpan.classList.remove("lose");
   }
 }
 

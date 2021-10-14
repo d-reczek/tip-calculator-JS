@@ -1,28 +1,78 @@
 body {
-  font-size: 40px;
   background-image: url(./iamges/zomie-bcg.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70%;
+  font-size: 40px;
+  font-family: "Roboto", sans-serif;
 }
+.wrapper {
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  margin: 5% auto;
+  background-color: rgba(179, 218, 241, 0.7);
+  height: 700px;
+}
+.score-board {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.score-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  border-radius: 5px;
+  background-color: #9c0707c5;
+}
+.score-style {
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+.score {
+  margin: 2px;
+  text-align: center;
+  font-size: 100px;
+  transition-property: all;
+  transition-duration: 1s;
+  border: 1px solid #000;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
 .choice {
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .choice-item {
   width: 200px;
   height: 200px;
-  /* background: gray; */
   border: 5px solid #000;
   border-radius: 100px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   cursor: pointer;
+  transition-property: background;
+  transition-duration: 0.8s;
+  background-color: rgba(255, 255, 255, 0.4);
 }
+.choice-item.win {
+  border: 10px solid green;
+}
+.choice-item:hover {
+  background-color: rgba(10, 10, 247, 0.7);
+  border: 6px solid #000;
+}
+
 .rock {
   background-image: url(./iamges/rock.png);
 }
@@ -31,4 +81,32 @@ body {
 }
 .scissors {
   background-image: url(./iamges/scissors.png);
+}
+.result-container {
+  display: flex;
+  justify-content: center;
+}
+
+.result {
+  color: black;
+  text-align: center;
+  font-size: 10px;
+  transition-property: all;
+  transition-duration: 0.4s;
+  padding: 20px;
+}
+.result.win {
+  color: green;
+  font-size: 40px;
+}
+.result.lose {
+  color: red;
+  font-size: 40px;
+}
+
+.result.draw {
+  color: blue;
+  font-size: 30px;
+}
+.game-over {
 }
