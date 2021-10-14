@@ -141,3 +141,90 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 800px) {
+  .choice-item {
+    width: 80px;
+    height: 80px;
+  }
+  .score-board {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .score-container {
+    width: 80%;
+  }
+  .score-style {
+    font-size: 25px;
+  }
+  .score {
+    font-size: 50px;
+  }
+  .result {
+    color: black;
+    text-align: center;
+    font-size: 10px;
+    transition-property: all;
+    transition-duration: 0.4s;
+    padding: 20px;
+  }
+  .result.win {
+    color: green;
+    font-size: 30px;
+  }
+  .result.lose {
+    color: red;
+    font-size: 30px;
+  }
+
+  .result.draw {
+    color: blue;
+    font-size: 20px;
+  }
+  .all-game.end {
+    display: none;
+  }
+  .end-game-container {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .choice-item {
+    width: 50px;
+    height: 50px;
+  }
+  .score-board {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  .score-container {
+    width: 40%;
+  }
+  .score-style {
+    font-size: 16px;
+  }
+  .score {
+    font-size: 30px;
+  }
+
+  .result.win {
+    color: green;
+    font-size: 20px;
+  }
+  .result.lose {
+    color: red;
+    font-size: 20px;
+  }
+
+  .result.draw {
+    color: blue;
+    font-size: 15px;
+  }
+
+  .end-game-container {
+    font-size: 50px;
+  }
+}
