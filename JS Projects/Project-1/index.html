@@ -11,16 +11,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 
-    <title>Document</title>
+    <title>Papier, kamień, nożyce</title>
 
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="game-over">
+
+        <div class="all-game">
+            <h1>Witaj w mojej grze papier kamień nożyce</h1>
+            <p class="rules">Gra toczy się do 10 pkt. Jeśli pierwszy zdobędziesz 10pkt - jesteś zwyciezcą! <br> Jeśli
+                przeciwnik będzie pierwszy niestety ponosisz klęske <br>Zapraszam Cię do zabawy!</p>
+
             <div class="score-board">
                 <div class="score-container">
-                    <p class="score-style">Twój wynik</p>
+                    <p class="score-style">Twój <br> wynik</p>
                     <p class="score user-score">0</p>
                 </div>
                 <div class="score-container">
@@ -36,9 +41,15 @@
             <div class="result-container">
                 <span class="result"></span>
             </div>
-            <script src="./main.js"></script>
+        </div>
+        <div class="end-game-container game-win">
+            <p>Wygrałes! &#128512</p>
+        </div>
+        <div class="end-game-container game-lose">
+            <p>Przeciwnik wygrał &#128542</p>
         </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 
 </html>
