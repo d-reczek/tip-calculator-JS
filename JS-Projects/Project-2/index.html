@@ -5,28 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./main.js"></script>
     <title>Document</title>
 </head>
+<style>
+    body {
+        font-size: 30px;
+    }
+</style>
 
 <body>
     <form action="">
         <div>
-            <label for=""> Bill
-                <input type="text">
+            <label for=""> Rachunek
+                <input class="bill" type="number">
             </label>
         </div>
         <label for=""> procent napiwku
-            <input type="range" min="0" max="100">
+            <span class="percent">0</span>
+            <input class="range-tip" value="0" type="range" min="0" max="100">
         </label>
     </form>
     <form action="">
+        <span>Wielkość napiwku</span><span class="tip-value">0,00 </span>
         <label for="">tip
-            <input type="text">
+            <!-- <input class="tip-value" type="text"> -->
         </label>
-        <label for=""> total amount
-            <input type="text">
-        </label>
+        <span>Całkowicie do zapłaty<span class="total-amount">0,00 zł</span></span>
+        <button class="button-10">10 procnet</button>
+        <button class="button-20">20 procent </button>
+
         </div>
+
     </form>
     <div>
 </body>
