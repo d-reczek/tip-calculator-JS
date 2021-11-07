@@ -5,8 +5,31 @@
   height: 560px;
   border: solid black;
 }
+.grid div {
+  width: 20px;
+  height: 20px;
+}
 .pac-dot {
   background-color: green;
-  border: 5px solid white;
-  box-sizing: border-box;
 }
+.wall {
+  background-color: blue;
+  /* border: 1px solid blue; */
+}
+.ghost-lair {
+  background-color: orange;
+  /* border: 1px solid orange; */
+}
+.power-pellet {
+  background-color: pink;
+  /* border: 1px solid pink; */
+}
+.pac-man {
+  background-color: black;
+}
+
+/* // 0 - pac-dots
+  // 1 - wall
+  // 2 - ghost-lair
+  // 3 - power-pellet
+  // 4 - empty */
