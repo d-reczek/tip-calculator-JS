@@ -1,13 +1,13 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 560px;
-  height: 560px;
+  width: 700px;
+  height: 700px;
   border: solid black;
 }
 .grid div {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 .pac-dot {
   background-color: green;
