@@ -25,7 +25,22 @@
   /* border: 1px solid pink; */
 }
 .pac-man {
-  background-color: black;
+  background-color: rgb(255, 255, 0);
+  width: 25;
+  height: 25;
+  border-radius: 20px;
+  /* border-right: 25px solid transparent; */
+  /* border-top: 25px solid blue;
+  border-left: 25px solid blue;
+  border-bottom: 25px solid blue;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px; */
+  /* top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: (-50%); */
 }
 
 /* // 0 - pac-dots
