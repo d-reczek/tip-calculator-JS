@@ -66,6 +66,7 @@ function init() {
     }
   }
   createBoard();
+
   // add PacMan to the grid
   let pacManPosition = 490;
   function createPacMan() {
@@ -74,7 +75,7 @@ function init() {
 
   createPacMan();
 
-  // move pacMan
+  // move PacMan
   function pacManMove() {
     document.addEventListener("keyup", (event) => {
       squares[pacManPosition].classList.remove("pac-man");
@@ -130,7 +131,6 @@ function init() {
   let score = 0;
   function pacManEatDot() {
     if (squares[pacManPosition].classList.contains("pac-dot")) {
-      console.log("jest kropka");
       squares[pacManPosition].classList.remove("pac-dot");
       score += 1;
       scoreSpan.textContent = score;
@@ -139,14 +139,10 @@ function init() {
 
   function pacManEatPowerPellet() {
     if (squares[pacManPosition].classList.contains("power-pellet")) {
-      console.log("jest kropka");
       squares[pacManPosition].classList.remove("power-pellet");
       score += 10;
       scoreSpan.textContent = score;
     }
   }
-  console.log(score);
-  // console.log(squares);
-  // console.log(layout);
 }
 window.onload = init;

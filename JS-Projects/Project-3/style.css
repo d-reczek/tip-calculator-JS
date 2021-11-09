@@ -1,4 +1,11 @@
+:root {
+  --pac-man-color: #f9fe17;
+  --bcg: rgb(0, 0, 0);
+  --wall: rgb(0, 0, 255);
+}
+
 .grid {
+  background-color: var(--bcg);
   display: flex;
   flex-wrap: wrap;
   width: 700px;
@@ -10,10 +17,13 @@
   height: 25px;
 }
 .pac-dot {
-  background-color: green;
+  box-sizing: border-box;
+  background-color: var(--pac-man-color);
+  border: 10px solid var(--bcg);
+  border-radius: 15px;
 }
 .wall {
-  background-color: blue;
+  background-color: var(--wall);
   /* border: 1px solid blue; */
 }
 .ghost-lair {
@@ -21,12 +31,13 @@
   /* border: 1px solid orange; */
 }
 .power-pellet {
-  background-color: pink;
-  /* border: 1px solid pink; */
+  box-sizing: border-box;
+  background-color: var(--pac-man-color);
+  border: 5px solid var(--bcg);
+  border-radius: 15px;
 }
 .pac-man {
-  background-color: rgb(255, 255, 0);
-  width: 25;
+  background-color: var(--pac-man-color);
   height: 25;
   border-radius: 20px;
   /* border-right: 25px solid transparent; */
