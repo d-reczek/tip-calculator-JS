@@ -158,5 +158,10 @@ function init() {
     squares[clydePosition].classList.add("clyde");
   }
   createGhost();
+
+  // move ghost
+  function moveGhost() {
+    
+  }
 }
 window.onload = init;
