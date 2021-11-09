@@ -144,5 +144,19 @@ function init() {
       scoreSpan.textContent = score;
     }
   }
+
+  //creat ghost
+  let blinkyPosition = 348;
+  let pinkyPosition = 404;
+  let inkyPosition = 351;
+  let clydePosition = 407;
+
+  function createGhost() {
+    squares[blinkyPosition].classList.add("blinky");
+    squares[pinkyPosition].classList.add("pinky");
+    squares[inkyPosition].classList.add("inky");
+    squares[clydePosition].classList.add("clyde");
+  }
+  createGhost();
 }
 window.onload = init;
