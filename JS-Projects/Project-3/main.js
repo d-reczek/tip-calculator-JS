@@ -1,4 +1,5 @@
 function init() {
+  // all defined variables
   const scoreSpan = document.querySelector(".score");
   width = 28;
   const grid = document.querySelector(".grid");
@@ -65,50 +66,82 @@ function init() {
     }
   }
   createBoard();
-
+  // add PacMan to the grid
   let pacManPosition = 490;
   function createPacMan() {
     squares[pacManPosition].classList.add("pac-man");
   }
+
   createPacMan();
 
-  document.addEventListener("keyup", (event) => {
-    squares[pacManPosition].classList.remove("pac-man");
-    if (
-      event.keyCode === 37 &&
-      !squares[pacManPosition - 1].classList.contains("wall")
-    ) {
-      squares[(pacManPosition -= 1)].classList.add("pac-man");
-    }
-    if (
-      (event.keyCode === 39) &
-      !squares[pacManPosition + 1].classList.contains("wall")
-    ) {
-      squares[(pacManPosition += 1)].classList.add("pac-man");
-    }
-    if (
-      event.keyCode === 38 &&
-      !squares[pacManPosition - width].classList.contains("wall")
-    ) {
-      squares[(pacManPosition -= width)].classList.add("pac-man");
-    }
-    if (
-      event.keyCode === 40 &&
-      !squares[pacManPosition + width].classList.contains("wall")
-    ) {
-      squares[(pacManPosition += width)].classList.add("pac-man");
-    }
-    squares[pacManPosition].classList.add("pac-man");
-    console.log(pacManPosition);
-    console.log("score", score);
-    pacManEatDot();
-  });
+  // move pacMan
+  function pacManMove() {
+    document.addEventListener("keyup", (event) => {
+      squares[pacManPosition].classList.remove("pac-man");
+      // teleportation from left to right
+      if (event.keyCode === 37 && pacManPosition === 364) {
+        pacManPosition = 391;
+        // move left
+      } else if (
+        event.keyCode === 37 &&
+        !squares[pacManPosition - 1].classList.contains("wall") &&
+        !squares[pacManPosition - 1].classList.contains("ghost-lair")
+      ) {
+        squares[(pacManPosition -= 1)].classList.add("pac-man");
+      }
+      // teleportation from right to left
+      if (event.keyCode === 39 && pacManPosition === 391) {
+        pacManPosition = 364;
+        // move right
+      } else if (
+        event.keyCode === 39 &&
+        !squares[pacManPosition + 1].classList.contains("wall") &&
+        !squares[pacManPosition + 1].classList.contains("ghost-lair")
+      ) {
+        squares[(pacManPosition += 1)].classList.add("pac-man");
+      }
+      // move up
+      if (
+        event.keyCode === 38 &&
+        !squares[pacManPosition - width].classList.contains("wall") &&
+        !squares[pacManPosition - width].classList.contains("ghost-lair")
+      ) {
+        squares[(pacManPosition -= width)].classList.add("pac-man");
+      }
+      // move down
+      if (
+        event.keyCode === 40 &&
+        !squares[pacManPosition + width].classList.contains("wall") &&
+        !squares[pacManPosition + width].classList.contains("ghost-lair")
+      ) {
+        squares[(pacManPosition += width)].classList.add("pac-man");
+      }
+
+      squares[pacManPosition].classList.add("pac-man");
+      console.log(pacManPosition);
+      console.log("score", score);
+      pacManEatDot();
+      pacManEatPowerPellet();
+    });
+  }
+  pacManMove();
+
+  // PacMan eat dot
   let score = 0;
   function pacManEatDot() {
     if (squares[pacManPosition].classList.contains("pac-dot")) {
       console.log("jest kropka");
       squares[pacManPosition].classList.remove("pac-dot");
       score += 1;
+      scoreSpan.textContent = score;
+    }
+  }
+
+  function pacManEatPowerPellet() {
+    if (squares[pacManPosition].classList.contains("power-pellet")) {
+      console.log("jest kropka");
+      squares[pacManPosition].classList.remove("power-pellet");
+      score += 10;
       scoreSpan.textContent = score;
     }
   }
