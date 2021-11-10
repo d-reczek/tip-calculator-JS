@@ -133,10 +133,13 @@ function init() {
       squares[pacManPosition].classList.contains("blinky") &&
       ghostsScared === true
     ) {
-      blinkyPosition = 348;
+      moveGhost();
       squares[pacManPosition].classList.remove("ghosts-scared");
       squares[pacManPosition].classList.remove("blinky");
-      console.log("zawiera pinky");
+      clearInterval(timer);
+      // blinkyPosition = 293;
+      // squares[pacManPosition].classList.remove("ghosts-scared");
+      // console.log("zawiera pinky");
       score += 50;
     }
   }
@@ -194,10 +197,10 @@ function init() {
     }, 1000);
   }
 
+  let timer = NaN;
   // move ghost
   function moveGhost() {
     const directions = [-1, +1, -width, +width];
-    let timer = NaN;
 
     // setTimeout(() => {
     //   blinkyPosition = 321;
@@ -241,10 +244,14 @@ function init() {
             squares[blinkyPosition].classList.add("ghosts-scared");
           }
         }
-      }, 200);
+      }, 600);
     }, 4000);
-    createGhost();
+    // createGhost();
   }
-  moveGhost();
+  setTimeout(() => {
+    moveGhost();
+  }, 2000);
+  // moveGhost();
+  createGhost();
 }
 window.onload = init;
