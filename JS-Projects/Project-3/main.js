@@ -133,7 +133,9 @@ function init() {
       squares[pacManPosition].classList.contains("blinky") &&
       ghostsScared === true
     ) {
-      moveGhost();
+      setTimeout(() => {
+        moveGhost();
+      }, 4000);
       squares[pacManPosition].classList.remove("ghosts-scared");
       squares[pacManPosition].classList.remove("blinky");
       clearInterval(timer);
@@ -217,10 +219,10 @@ function init() {
           setTimeout(() => {
             squares[321].classList.remove("blinky");
             squares[293].classList.add("blinky");
-          }, 1000);
-        }, 1000);
-      }, 1000);
-    }, 1000);
+          }, 500);
+        }, 500);
+      }, 500);
+    }, 500);
 
     setTimeout(() => {
       blinkyPosition = 293;
@@ -244,8 +246,8 @@ function init() {
             squares[blinkyPosition].classList.add("ghosts-scared");
           }
         }
-      }, 600);
-    }, 4000);
+      }, 250);
+    }, 2000);
     // createGhost();
   }
   setTimeout(() => {
