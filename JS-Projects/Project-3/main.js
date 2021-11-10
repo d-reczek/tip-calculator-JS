@@ -140,13 +140,20 @@ function init() {
   function pacManEatPowerPellet() {
     if (squares[pacManPosition].classList.contains("power-pellet")) {
       squares[pacManPosition].classList.remove("power-pellet");
+      ghostsScared = true;
+      setTimeout(ghostUnscared, 15000);
       score += 10;
       scoreSpan.textContent = score;
     }
   }
+  //ghost scared
+  let ghostsScared = false;
 
+  function ghostUnscared() {
+    ghostsScared = false;
+  }
   //creat ghost
-  let blinkyPosition = 348;
+  let blinkyPosition = 495; //495//; //348
   let pinkyPosition = 404;
   let inkyPosition = 351;
   let clydePosition = 407;
@@ -161,7 +168,28 @@ function init() {
 
   // move ghost
   function moveGhost() {
-    
+    const directions = [-1, +1, -width, +width];
+    let timer = NaN;
+    timer = setInterval(() => {
+      let direction = directions[Math.floor(Math.random() * directions.length)];
+      // console.log("kierunek", direction);
+      if (!squares[blinkyPosition + direction].classList.contains("wall")) {
+        squares[blinkyPosition].classList.remove("blinky");
+        squares[blinkyPosition].classList.remove("ghosts-scared");
+        blinkyPosition += direction;
+        // console.log("drugi", blinkyPosition);
+        squares[blinkyPosition].classList.add("blinky");
+        // squares[blinkyPosition + direction].classList.add("blinky");
+        console.log("ghos scared", ghostsScared);
+        console.log("blinky", squares[blinkyPosition])
+        if (!ghostsScared === false) {
+          squares[blinkyPosition].classList.add("ghosts-scared");
+        } else {
+          // squares[blinkyPosition].classList.remove("ghosts-scared");
+        }
+      }
+    }, 200);
   }
+  moveGhost();
 }
 window.onload = init;

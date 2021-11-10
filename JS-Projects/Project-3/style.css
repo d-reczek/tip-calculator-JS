@@ -51,9 +51,9 @@
   border-radius: 20px;
 }
 .blinky {
-  box-sizing: border-box;
   background-color: red;
   border-radius: 7px;
+  border: none;
 }
 .pinky {
   background-color: pink;
@@ -66,4 +66,8 @@
 .clyde {
   background-color: orange;
   border-radius: 7px;
+}
+.ghosts-scared {
+
+  background-color: green;
 }
