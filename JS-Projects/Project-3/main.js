@@ -123,9 +123,23 @@ function init() {
       console.log("score", score);
       pacManEatDot();
       pacManEatPowerPellet();
+      pacManEatGhost();
     });
   }
   pacManMove();
+
+  function pacManEatGhost() {
+    if (
+      squares[pacManPosition].classList.contains("blinky") &&
+      ghostsScared === true
+    ) {
+      blinkyPosition = 348;
+      squares[pacManPosition].classList.remove("ghosts-scared");
+      squares[pacManPosition].classList.remove("blinky");
+      console.log("zawiera pinky");
+      score += 50;
+    }
+  }
 
   // PacMan eat dot
   let score = 0;
@@ -176,19 +190,22 @@ function init() {
       if (!squares[blinkyPosition + direction].classList.contains("wall")) {
         squares[blinkyPosition].classList.remove("blinky");
         squares[blinkyPosition].classList.remove("ghosts-scared");
+        //
+        //
+
         blinkyPosition += direction;
         // console.log("drugi", blinkyPosition);
         squares[blinkyPosition].classList.add("blinky");
         // squares[blinkyPosition + direction].classList.add("blinky");
-        console.log("ghos scared", ghostsScared);
-        console.log("blinky", squares[blinkyPosition])
+        // console.log("ghos scared", ghostsScared);
+        // console.log("blinky", squares[blinkyPosition]);
         if (!ghostsScared === false) {
           squares[blinkyPosition].classList.add("ghosts-scared");
         } else {
           // squares[blinkyPosition].classList.remove("ghosts-scared");
         }
       }
-    }, 200);
+    }, 300);
   }
   moveGhost();
 }
