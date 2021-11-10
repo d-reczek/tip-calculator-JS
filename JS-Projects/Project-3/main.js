@@ -124,6 +124,7 @@ function init() {
       pacManEatDot();
       pacManEatPowerPellet();
       pacManEatGhost();
+      gameOver();
     });
   }
   pacManMove();
@@ -246,7 +247,7 @@ function init() {
             squares[blinkyPosition].classList.add("ghosts-scared");
           }
         }
-      }, 250);
+      }, 150);
     }, 2000);
     // createGhost();
   }
@@ -255,5 +256,12 @@ function init() {
   }, 2000);
   // moveGhost();
   createGhost();
+
+  function gameOver() {
+    if (squares[pacManPosition].classList.contains("blinky")) {
+      console.log("game over");
+      alert("gama over");
+    }
+  }
 }
 window.onload = init;
