@@ -167,7 +167,7 @@ function init() {
     ghostsScared = false;
   }
   //creat ghost
-  let blinkyPosition = 495; //495//; //348
+  let blinkyPosition = 348; //495//; //348
   let pinkyPosition = 404;
   let inkyPosition = 351;
   let clydePosition = 407;
@@ -178,34 +178,72 @@ function init() {
     squares[inkyPosition].classList.add("inky");
     squares[clydePosition].classList.add("clyde");
   }
-  createGhost();
+  // createGhost();
+  function test() {
+    setTimeout(() => {
+      blinkyPosition = 349;
+      squares[348].classList.remove("blinky");
+      setTimeout(() => {
+        squares[349].classList.remove("blinky");
+        blinkyPosition = 321;
+        setTimeout(() => {
+          squares[321].classList.remove("blinky");
+          blinkyPosition = 293;
+        }, 1000);
+      }, 1000);
+    }, 1000);
+  }
 
   // move ghost
   function moveGhost() {
     const directions = [-1, +1, -width, +width];
     let timer = NaN;
-    timer = setInterval(() => {
-      let direction = directions[Math.floor(Math.random() * directions.length)];
-      // console.log("kierunek", direction);
-      if (!squares[blinkyPosition + direction].classList.contains("wall")) {
-        squares[blinkyPosition].classList.remove("blinky");
-        squares[blinkyPosition].classList.remove("ghosts-scared");
-        //
-        //
 
-        blinkyPosition += direction;
-        // console.log("drugi", blinkyPosition);
-        squares[blinkyPosition].classList.add("blinky");
-        // squares[blinkyPosition + direction].classList.add("blinky");
-        // console.log("ghos scared", ghostsScared);
-        // console.log("blinky", squares[blinkyPosition]);
-        if (!ghostsScared === false) {
-          squares[blinkyPosition].classList.add("ghosts-scared");
-        } else {
-          // squares[blinkyPosition].classList.remove("ghosts-scared");
+    // setTimeout(() => {
+    //   blinkyPosition = 321;
+    //   squares[348].classList.remove("blinky");
+    // }, 1000);
+    setTimeout(() => {
+      squares[348].classList.add("blinky");
+      setTimeout(() => {
+        squares[349].classList.add("blinky");
+        squares[348].classList.remove("blinky");
+        setTimeout(() => {
+          squares[349].classList.remove("blinky");
+          squares[321].classList.add("blinky");
+          setTimeout(() => {
+            squares[321].classList.remove("blinky");
+            squares[293].classList.add("blinky");
+          }, 1000);
+        }, 1000);
+      }, 1000);
+    }, 1000);
+
+    setTimeout(() => {
+      blinkyPosition = 293;
+      timer = setInterval(() => {
+        // blinkyPosition = 293;
+        let direction =
+          directions[Math.floor(Math.random() * directions.length)];
+
+        if (
+          !squares[blinkyPosition + direction].classList.contains("wall") &&
+          !squares[blinkyPosition + direction].classList.contains("ghost-lair")
+        ) {
+          squares[blinkyPosition].classList.remove("blinky");
+          squares[blinkyPosition].classList.remove("ghosts-scared");
+
+          blinkyPosition += direction;
+
+          squares[blinkyPosition].classList.add("blinky");
+
+          if (!ghostsScared === false) {
+            squares[blinkyPosition].classList.add("ghosts-scared");
+          }
         }
-      }
-    }, 300);
+      }, 200);
+    }, 4000);
+    createGhost();
   }
   moveGhost();
 }
