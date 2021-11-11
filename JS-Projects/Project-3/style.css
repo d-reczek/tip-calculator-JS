@@ -2,28 +2,76 @@
   --pac-man-color: #f9fe17;
   --bcg: rgb(0, 0, 0);
   --wall: rgb(0, 0, 255);
+  --width-height: 704px;
+  --border-heigh: 2px;
+  --square: 25px;
 }
-.wrapper {
-  display: flex;
-  justify-content: center;
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: var(--bcg);
+}
+
+.game-title-container {
+  box-sizing: border-box;
+  width: var(--width-height);
+  border: var(--border-heigh) solid white;
+  border-bottom: none;
+  margin: 0 auto;
+}
+.title-container {
+  background-color: orange;
+  /* width: 700px; */
+  /* margin: 0 auto; */
+}
+.title-container p {
+  text-align: center;
+  padding: 10px;
+  font-size: 6rem;
+  color: var(--pac-man-color);
+}
+.score-board-container {
+  background-color: red;
+  /* width: 700px; */
+  /* margin: 0 auto; */
 }
 .score-board {
   text-align: center;
-  font-size: 35px;
+  font-size: 2rem;
   margin: 0;
   padding: 10px;
 }
+
+.win-container p {
+  font-size: 10rem;
+  color: red;
+}
+.wrapper {
+  width: var(--width-height);
+  position: relative;
+  margin: 0 auto;
+}
+.win {
+  position: absolute;
+  left: 10%;
+  top: 200px;
+  display: none;
+}
+.grid-container {
+  position: absolute;
+  margin: 0 auto;
+}
+
 .grid {
   background-color: var(--bcg);
   display: flex;
   flex-wrap: wrap;
   width: 700px;
   height: 700px;
-  border: solid black;
+  border: var(--border-heigh) solid white;
 }
 .grid div {
-  width: 25px;
-  height: 25px;
+  width: var(--square);
+  height: var(--square);
 }
 .pac-dot {
   box-sizing: border-box;
@@ -33,11 +81,9 @@
 }
 .wall {
   background-color: var(--wall);
-  /* border: 1px solid blue; */
 }
 .ghost-lair {
   /* background-color: orange; */
-  /* border: 1px solid orange; */
 }
 .power-pellet {
   box-sizing: border-box;

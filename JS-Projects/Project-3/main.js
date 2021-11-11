@@ -1,5 +1,7 @@
 function init() {
   // variable for grid
+  const game = document.querySelector(".game");
+  const winDiv = document.querySelector(".win");
   const scoreSpan = document.querySelector(".score");
   width = 28;
   const grid = document.querySelector(".grid");
@@ -208,12 +210,12 @@ function init() {
       scoreSpan.textContent = score;
     }
   }
-
+  const timeWhenPacManEatPowerPellet = 10000;
   function pacManEatPowerPellet() {
     if (squares[pacManPosition].classList.contains("power-pellet")) {
       squares[pacManPosition].classList.remove("power-pellet");
       ghostsScared = true;
-      setTimeout(ghostUnscared, 15000);
+      setTimeout(ghostUnscared, timeWhenPacManEatPowerPellet);
       pointsToWin += 1;
       score += 10;
       scoreSpan.textContent = score;
@@ -300,9 +302,6 @@ function init() {
       }, blinkySpeed);
     }, startDelay * 4);
   }
-  // setTimeout(() => {
-  //   moveGhostBlinky();
-  // }, 2000);
 
   let timerInky = NaN;
 
@@ -390,7 +389,7 @@ function init() {
 
     setTimeout(() => {
       pinkyPosition = 293;
-      timerInky = setInterval(() => {
+      timerPinky = setInterval(() => {
         let direction =
           directions[Math.floor(Math.random() * directions.length)];
 
@@ -503,16 +502,29 @@ function init() {
 
   // how to win
 
-  const winPoints = 238;
+  const winPoints = 2; //238
   function win() {
     if (pointsToWin === winPoints) {
-      alert("wygrales");
+      clearInterval(timerInky);
+      clearInterval(timerBlinky);
+      clearInterval(timerPinky);
+      clearInterval(timerClyde);
+      // game.style.display = "none";
+      setTimeout(() => {
+        winDiv.style.display = "inherit";
+      }, 1500);
+      // alert("win");
     }
   }
 
   // how to lose
   function gameOver() {
-    if (squares[pacManPosition].classList.contains("blinky")) {
+    if (
+      squares[pacManPosition].classList.contains("blinky") ||
+      squares[pacManPosition].classList.contains("inky") ||
+      squares[pacManPosition].classList.contains("pinky") ||
+      squares[pacManPosition].classList.contains("clyde")
+    ) {
       console.log("game over");
       alert("gama over");
     }
