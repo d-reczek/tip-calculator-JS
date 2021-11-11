@@ -1,4 +1,10 @@
 function init() {
+  // sound
+  const introSound = document.querySelector(".intro");
+  const dieSound = document.querySelector(".pac-man-die");
+  const pacManChompSound = document.querySelector(".pac-man-chomp");
+  let pacManSirenSound = document.querySelector(".pac-man-siren");
+
   // variable for grid
   const game = document.querySelector(".game");
   const winDiv = document.querySelector(".win");
@@ -45,6 +51,7 @@ function init() {
   // 2 - ghost-lair
   // 3 - power-pellet
   // 4 - empty
+
   const squares = [];
 
   // create your board
@@ -67,6 +74,7 @@ function init() {
         squares[i].classList.add(i);
       }
     }
+    introSound.play();
   }
   createBoard();
 
@@ -99,6 +107,7 @@ function init() {
       ) {
         squares[(pacManPosition -= 1)].classList.add("pac-man", "pac-man-left");
       }
+
       // teleportation from right to left
       if (event.keyCode === 39 && pacManPosition === 391) {
         pacManPosition = 364;
@@ -136,7 +145,7 @@ function init() {
         );
       }
 
-      // squares[pacManPosition].classList.add("pac-man");
+      squares[pacManPosition].classList.add("pac-man");
       pacManEatDot();
       pacManEatPowerPellet();
       pacManEatGhostBlinky();
@@ -145,6 +154,9 @@ function init() {
       pacManEatGhostClyde();
       gameOver();
       win();
+      setInterval(() => {
+        pacManSirenSound.play();
+      }, 600);
     });
   }
   pacManMove();
@@ -224,6 +236,7 @@ function init() {
       pointsToWin += 1;
       score += 1;
       scoreSpan.textContent = score;
+      pacManChompSound.play();
     }
   }
   // PacMan eat power pellet
@@ -308,13 +321,12 @@ function init() {
           if (!ghostsScared === false) {
             squares[blinkyPosition].classList.add("ghosts-scared");
           }
-          // if (
-          //   squares[blinkyPosition].classList.contains("pac-man") &&
-          //   ghostsScared === false
-          // ) {
-          //   console.log("game over");
-          //   alert("gama over");
-          // }
+          if (
+            squares[blinkyPosition].classList.contains("pac-man") &&
+            ghostsScared === false
+          ) {
+            gameOverForGhost();
+          }
         }
       }, blinkySpeed);
     }, startDelay * 4);
@@ -362,13 +374,12 @@ function init() {
           if (!ghostsScared === false) {
             squares[inkyPosition].classList.add("ghosts-scared");
           }
-          // if (
-          //   squares[inkyPosition].classList.contains("pac-man") &&
-          //   ghostsScared === false
-          // ) {
-          //   console.log("game over");
-          //   alert("gama over");
-          // }
+          if (
+            squares[inkyPosition].classList.contains("pac-man") &&
+            ghostsScared === false
+          ) {
+            gameOverForGhost();
+          }
         }
       }, inkySpeed);
     }, startDelay * 4);
@@ -424,13 +435,12 @@ function init() {
           if (!ghostsScared === false) {
             squares[pinkyPosition].classList.add("ghosts-scared");
           }
-          // if (
-          //   squares[pinkyPosition].classList.contains("pac-man") &&
-          //   ghostsScared === false
-          // ) {
-          //   console.log("game over");
-          //   alert("gama over");
-          // }
+          if (
+            squares[pinkyPosition].classList.contains("pac-man") &&
+            ghostsScared === false
+          ) {
+            gameOverForGhost();
+          }
         }
       }, pinkySpeed);
     }, startDelay * 6);
@@ -489,8 +499,6 @@ function init() {
             squares[clydePosition].classList.contains("pac-man") &&
             ghostsScared === false
           ) {
-            // console.log("game over");
-            // alert("gama over");
             gameOverForGhost();
           }
         }
@@ -528,7 +536,7 @@ function init() {
   //   highscore = score;
   // }
 
-  const winPoints = 238; //238
+  const winPoints = 2; //238
   function win() {
     if (pointsToWin === winPoints) {
       clearInterval(timerInky);
@@ -536,6 +544,7 @@ function init() {
       clearInterval(timerPinky);
       clearInterval(timerClyde);
       // game.style.display = "none";
+      pacManSirenSound = 0;
       setTimeout(() => {
         winDiv.style.display = "inherit";
       }, 2500);
@@ -564,9 +573,10 @@ function init() {
     winDiv.style.display = "inherit";
 
     endingText.textContent = "GAME OVER";
+    dieSound.play();
     setTimeout(() => {
       location.reload();
-    }, 1000);
+    }, 2000);
   }
 }
 window.onload = init;
