@@ -125,6 +125,8 @@ function init() {
       pacManEatPowerPellet();
       pacManEatGhost();
       gameOver();
+      win();
+      console.log("punkty wygranka", pointsToWin);
     });
   }
   pacManMove();
@@ -149,9 +151,11 @@ function init() {
 
   // PacMan eat dot
   let score = 0;
+  let pointsToWin = 0;
   function pacManEatDot() {
     if (squares[pacManPosition].classList.contains("pac-dot")) {
       squares[pacManPosition].classList.remove("pac-dot");
+      pointsToWin += 1;
       score += 1;
       scoreSpan.textContent = score;
     }
@@ -162,6 +166,7 @@ function init() {
       squares[pacManPosition].classList.remove("power-pellet");
       ghostsScared = true;
       setTimeout(ghostUnscared, 15000);
+      pointsToWin += 1;
       score += 10;
       scoreSpan.textContent = score;
     }
@@ -184,6 +189,7 @@ function init() {
     squares[inkyPosition].classList.add("inky");
     squares[clydePosition].classList.add("clyde");
   }
+
   // createGhost();
   function test() {
     setTimeout(() => {
@@ -246,6 +252,13 @@ function init() {
           if (!ghostsScared === false) {
             squares[blinkyPosition].classList.add("ghosts-scared");
           }
+          if (
+            squares[blinkyPosition].classList.contains("pac-man") &&
+            ghostsScared === false
+          ) {
+            console.log("game over");
+            alert("gama over");
+          }
         }
       }, 150);
     }, 2000);
@@ -256,6 +269,13 @@ function init() {
   }, 2000);
   // moveGhost();
   createGhost();
+  const winPoints = 238;
+  function win() {
+    if (pointsToWin === winPoints) {
+      //238
+      alert("wygrales");
+    }
+  }
 
   function gameOver() {
     if (squares[pacManPosition].classList.contains("blinky")) {
