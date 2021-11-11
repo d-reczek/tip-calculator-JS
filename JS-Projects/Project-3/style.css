@@ -100,8 +100,8 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   /* background-color: var(--pac-man-color); */
-  height: 25;
-  width: 25;
+  /* height: 25; */
+  /* width: 25; */
   /* border-radius: 20px; */
 }
 .pac-man-right {
@@ -141,25 +141,42 @@ body {
   border-radius: 20px; */
 }
 .blinky {
-  background-color: red;
-  border-radius: 7px;
+  background-image: url(./img/blinky.png);
+  background-color: var(--bcg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* /* background-color: red; */
+  border-radius: 0;
   border: none;
 }
 .pinky {
-  background-color: pink;
-  border-radius: 7px;
+  background-image: url(./img/pinky.png);
+  background-color: var(--bcg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 0;
   border: none;
 }
 .inky {
-  background-color: aquamarine;
-  border-radius: 7px;
+  background-image: url(./img/inky.png);
+  background-color: var(--bcg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 0;
   border: none;
 }
 .clyde {
-  background-color: orange;
-  border-radius: 7px;
+  background-image: url(./img/clyde.png);
+  background-color: var(--bcg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 0;
   border: none;
 }
 .ghosts-scared {
-  background-color: rgb(53, 53, 247);
+  background-image: url(./img/ghost-scared.png);
+  background-color: var(--bcg);
+  background-size: contain;
+  border-radius: 0;
+  border: none;
 }
