@@ -1,5 +1,5 @@
 :root {
-  --pac-man-color: #f9fe17;
+  --pac-man-color: #ffcc00;
   --bcg: rgb(0, 0, 0);
   --wall: rgb(0, 0, 255);
   --width-height: 704px;
@@ -96,13 +96,49 @@ body {
   border-radius: 15px;
 }
 .pac-man {
-  background-image: url(./img/pac-man-icon.png);
+  background-image: url(./img/pac-man-left.png);
   background-repeat: no-repeat;
   background-size: contain;
   /* background-color: var(--pac-man-color); */
   height: 25;
   width: 25;
   /* border-radius: 20px; */
+}
+.pac-man-right {
+  background-image: url(./img//pac-man-right.png);
+  /* background-repeat: no-repeat;
+  background-size: contain;
+  /* background-color: var(--pac-man-color); */
+  /* height: 25;
+  width: 25;
+  border-radius: 20px; */
+}
+.pac-man-left {
+  background-image: url(./img/pac-man-left.png);
+  /* background-repeat: no-repeat;
+  background-size: contain;
+  /* background-color: var(--pac-man-color); */
+  /* height: 25;
+  width: 25;
+  border-radius: 20px; */
+}
+.pac-man-up {
+  background-image: url(./img/pac-man-up.png);
+  /* background-repeat: no-repeat;
+  background-size: contain;
+  /* background-color: var(--pac-man-color); */
+  /* height: 25;
+  width: 25;
+  border-radius: 20px; */
+}
+.pac-man-down {
+  background-image: url(./img/pac-man-down.png);
+  /* background-repeat: no-repeat;
+  background-size: contain;
+  /* background-color: var(--pac-man-color); */
+  /* height: 25;
+  width: 25;
+  border-radius: 20px; */
 }
 .blinky {
   background-color: red;

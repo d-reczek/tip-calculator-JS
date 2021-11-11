@@ -81,7 +81,13 @@ function init() {
   // move PacMan
   function pacManMove() {
     document.addEventListener("keyup", (event) => {
-      squares[pacManPosition].classList.remove("pac-man");
+      squares[pacManPosition].classList.remove(
+        "pac-man",
+        "pac-man-right",
+        "pac-man-left",
+        "pac-man-up",
+        "pac-man-down"
+      );
       // teleportation from left to right
       if (event.keyCode === 37 && pacManPosition === 364) {
         pacManPosition = 391;
@@ -91,7 +97,7 @@ function init() {
         !squares[pacManPosition - 1].classList.contains("wall") &&
         !squares[pacManPosition - 1].classList.contains("ghost-lair")
       ) {
-        squares[(pacManPosition -= 1)].classList.add("pac-man");
+        squares[(pacManPosition -= 1)].classList.add("pac-man", "pac-man-left");
       }
       // teleportation from right to left
       if (event.keyCode === 39 && pacManPosition === 391) {
@@ -102,7 +108,10 @@ function init() {
         !squares[pacManPosition + 1].classList.contains("wall") &&
         !squares[pacManPosition + 1].classList.contains("ghost-lair")
       ) {
-        squares[(pacManPosition += 1)].classList.add("pac-man");
+        squares[(pacManPosition += 1)].classList.add(
+          "pac-man",
+          "pac-man-right"
+        );
       }
       // move up
       if (
@@ -110,7 +119,10 @@ function init() {
         !squares[pacManPosition - width].classList.contains("wall") &&
         !squares[pacManPosition - width].classList.contains("ghost-lair")
       ) {
-        squares[(pacManPosition -= width)].classList.add("pac-man");
+        squares[(pacManPosition -= width)].classList.add(
+          "pac-man",
+          "pac-man-up"
+        );
       }
       // move down
       if (
@@ -118,10 +130,13 @@ function init() {
         !squares[pacManPosition + width].classList.contains("wall") &&
         !squares[pacManPosition + width].classList.contains("ghost-lair")
       ) {
-        squares[(pacManPosition += width)].classList.add("pac-man");
+        squares[(pacManPosition += width)].classList.add(
+          "pac-man",
+          "pac-man-down"
+        );
       }
 
-      squares[pacManPosition].classList.add("pac-man");
+      // squares[pacManPosition].classList.add("pac-man");
       pacManEatDot();
       pacManEatPowerPellet();
       pacManEatGhostBlinky();
@@ -211,6 +226,7 @@ function init() {
       scoreSpan.textContent = score;
     }
   }
+  // PacMan eat power pellet
   const timeWhenPacManEatPowerPellet = 10000;
   function pacManEatPowerPellet() {
     if (squares[pacManPosition].classList.contains("power-pellet")) {
@@ -503,6 +519,14 @@ function init() {
   }, 8000);
 
   // how to win
+  // const highscoreSave = localStorage.setItem("darek");
+  // localStorage.setItem("darek", highscore);
+
+  // let highscore = 0;
+  // highscore = 230;
+  // function highscoreAdd() {
+  //   highscore = score;
+  // }
 
   const winPoints = 238; //238
   function win() {
