@@ -502,7 +502,7 @@ function init() {
 
   // how to win
 
-  const winPoints = 2; //238
+  const winPoints = 238; //238
   function win() {
     if (pointsToWin === winPoints) {
       clearInterval(timerInky);
