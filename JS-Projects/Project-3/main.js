@@ -2,6 +2,7 @@ function init() {
   // variable for grid
   const game = document.querySelector(".game");
   const winDiv = document.querySelector(".win");
+  const endingText = document.querySelector(".ending-text");
   const scoreSpan = document.querySelector(".score");
   width = 28;
   const grid = document.querySelector(".grid");
@@ -291,13 +292,13 @@ function init() {
           if (!ghostsScared === false) {
             squares[blinkyPosition].classList.add("ghosts-scared");
           }
-          if (
-            squares[blinkyPosition].classList.contains("pac-man") &&
-            ghostsScared === false
-          ) {
-            console.log("game over");
-            alert("gama over");
-          }
+          // if (
+          //   squares[blinkyPosition].classList.contains("pac-man") &&
+          //   ghostsScared === false
+          // ) {
+          //   console.log("game over");
+          //   alert("gama over");
+          // }
         }
       }, blinkySpeed);
     }, startDelay * 4);
@@ -345,13 +346,13 @@ function init() {
           if (!ghostsScared === false) {
             squares[inkyPosition].classList.add("ghosts-scared");
           }
-          if (
-            squares[inkyPosition].classList.contains("pac-man") &&
-            ghostsScared === false
-          ) {
-            console.log("game over");
-            alert("gama over");
-          }
+          // if (
+          //   squares[inkyPosition].classList.contains("pac-man") &&
+          //   ghostsScared === false
+          // ) {
+          //   console.log("game over");
+          //   alert("gama over");
+          // }
         }
       }, inkySpeed);
     }, startDelay * 4);
@@ -407,13 +408,13 @@ function init() {
           if (!ghostsScared === false) {
             squares[pinkyPosition].classList.add("ghosts-scared");
           }
-          if (
-            squares[pinkyPosition].classList.contains("pac-man") &&
-            ghostsScared === false
-          ) {
-            console.log("game over");
-            alert("gama over");
-          }
+          // if (
+          //   squares[pinkyPosition].classList.contains("pac-man") &&
+          //   ghostsScared === false
+          // ) {
+          //   console.log("game over");
+          //   alert("gama over");
+          // }
         }
       }, pinkySpeed);
     }, startDelay * 6);
@@ -472,8 +473,9 @@ function init() {
             squares[clydePosition].classList.contains("pac-man") &&
             ghostsScared === false
           ) {
-            console.log("game over");
-            alert("gama over");
+            // console.log("game over");
+            // alert("gama over");
+            gameOverForGhost();
           }
         }
       }, clydeSpeed);
@@ -485,12 +487,12 @@ function init() {
     moveGhostBlinky();
   }, 2000);
 
-  // // // delay of Inky
+  // // // // delay of Inky
   setTimeout(() => {
     moveGhostInky();
   }, 4000);
 
-  // // // // delay of Pinky
+  // // // // // delay of Pinky
   setTimeout(() => {
     moveGhostPinky();
   }, 6000);
@@ -512,7 +514,7 @@ function init() {
       // game.style.display = "none";
       setTimeout(() => {
         winDiv.style.display = "inherit";
-      }, 1500);
+      }, 2500);
       // alert("win");
     }
   }
@@ -525,9 +527,22 @@ function init() {
       squares[pacManPosition].classList.contains("pinky") ||
       squares[pacManPosition].classList.contains("clyde")
     ) {
-      console.log("game over");
-      alert("gama over");
+      gameOverForGhost();
     }
+  }
+  function gameOverForGhost() {
+    clearInterval(timerInky);
+    clearInterval(timerBlinky);
+    clearInterval(timerPinky);
+    clearInterval(timerClyde);
+    // console.log("game over");
+    // alert("gama over");
+    winDiv.style.display = "inherit";
+
+    endingText.textContent = "GAME OVER";
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 }
 window.onload = init;

@@ -40,6 +40,9 @@ body {
   margin: 0;
   padding: 10px;
 }
+.highscore-container {
+  text-align: center;
+}
 
 .win-container p {
   font-size: 10rem;
@@ -56,6 +59,7 @@ body {
   top: 200px;
   display: none;
 }
+
 .grid-container {
   position: absolute;
   margin: 0 auto;
@@ -92,9 +96,13 @@ body {
   border-radius: 15px;
 }
 .pac-man {
-  background-color: var(--pac-man-color);
+  background-image: url(./img/pac-man-icon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-color: var(--pac-man-color); */
   height: 25;
-  border-radius: 20px;
+  width: 25;
+  /* border-radius: 20px; */
 }
 .blinky {
   background-color: red;
