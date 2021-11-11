@@ -123,12 +123,15 @@ function init() {
       pacManEatPowerPellet();
       pacManEatGhostBlinky();
       pacManEatGhostInky();
+      pacManEatGhostPinky();
+      pacManEatGhostClyde();
       gameOver();
       win();
     });
   }
   pacManMove();
-
+  const pointsWhenPacManEatGhost = 20;
+  const timeDelayAfterPacManEatGhost = 4000;
   // PacMan eat ghost Blinky
 
   function pacManEatGhostBlinky() {
@@ -138,13 +141,15 @@ function init() {
     ) {
       setTimeout(() => {
         moveGhostBlinky();
-      }, 4000);
+      }, timeDelayAfterPacManEatGhost);
       squares[pacManPosition].classList.remove("ghosts-scared");
       squares[pacManPosition].classList.remove("blinky");
       clearInterval(timerBlinky);
-      score += 20;
+      score += pointsWhenPacManEatGhost;
     }
   }
+  // PacMan eat ghost Inky
+
   function pacManEatGhostInky() {
     if (
       squares[pacManPosition].classList.contains("inky") &&
@@ -152,11 +157,43 @@ function init() {
     ) {
       setTimeout(() => {
         moveGhostInky();
-      }, 4000);
+      }, timeDelayAfterPacManEatGhost);
       squares[pacManPosition].classList.remove("ghosts-scared");
       squares[pacManPosition].classList.remove("inky");
       clearInterval(timerInky);
-      score += 20;
+      score += pointsWhenPacManEatGhost;
+    }
+  }
+  // PacMan eat ghost Pinky
+
+  function pacManEatGhostPinky() {
+    if (
+      squares[pacManPosition].classList.contains("pinky") &&
+      ghostsScared === true
+    ) {
+      setTimeout(() => {
+        moveGhostPinky();
+      }, timeDelayAfterPacManEatGhost);
+      squares[pacManPosition].classList.remove("ghosts-scared");
+      squares[pacManPosition].classList.remove("pinky");
+      clearInterval(timerPinky);
+      score += pointsWhenPacManEatGhost;
+    }
+  }
+  // PacMan eat ghost Pinky
+
+  function pacManEatGhostClyde() {
+    if (
+      squares[pacManPosition].classList.contains("clyde") &&
+      ghostsScared === true
+    ) {
+      setTimeout(() => {
+        moveGhostClyde();
+      }, timeDelayAfterPacManEatGhost);
+      squares[pacManPosition].classList.remove("ghosts-scared");
+      squares[pacManPosition].classList.remove("clyde");
+      clearInterval(timerClyde);
+      score += pointsWhenPacManEatGhost;
     }
   }
 
@@ -196,9 +233,10 @@ function init() {
   let inkyPosition = 351;
   let clydePosition = 407;
 
-  const blinkySpeed = 300;
-  const pinkySpeed = 350;
-  const inkySpeed = 200;
+  const blinkySpeed = 400;
+  const pinkySpeed = 450;
+  const inkySpeed = 350;
+  const clydeSpeed = 300;
 
   function createGhost() {
     squares[blinkyPosition].classList.add("blinky");
@@ -381,26 +419,87 @@ function init() {
       }, pinkySpeed);
     }, startDelay * 6);
   }
+  let timerClyde = NaN;
+
+  // move ghost Clyde
+  function moveGhostClyde() {
+    const directions = [-1, +1, -width, +width];
+
+    setTimeout(() => {
+      squares[407].classList.add("clyde");
+      setTimeout(() => {
+        squares[406].classList.add("clyde");
+        squares[407].classList.remove("clyde");
+        setTimeout(() => {
+          squares[406].classList.remove("clyde");
+          squares[378].classList.add("clyde");
+          setTimeout(() => {
+            squares[378].classList.remove("clyde");
+            squares[350].classList.add("clyde");
+            setTimeout(() => {
+              squares[350].classList.remove("clyde");
+              squares[322].classList.add("clyde");
+              setTimeout(() => {
+                squares[322].classList.remove("clyde");
+                squares[294].classList.add("clyde");
+              }, startDelay);
+            }, startDelay);
+          }, startDelay);
+        }, startDelay);
+      }, startDelay);
+    }, startDelay);
+
+    setTimeout(() => {
+      clydePosition = 294;
+      timerClyde = setInterval(() => {
+        let direction =
+          directions[Math.floor(Math.random() * directions.length)];
+
+        if (
+          !squares[clydePosition + direction].classList.contains("wall") &&
+          !squares[clydePosition + direction].classList.contains("ghost-lair")
+        ) {
+          squares[clydePosition].classList.remove("clyde");
+          squares[clydePosition].classList.remove("ghosts-scared");
+
+          clydePosition += direction;
+
+          squares[clydePosition].classList.add("clyde");
+
+          if (!ghostsScared === false) {
+            squares[clydePosition].classList.add("ghosts-scared");
+          }
+          if (
+            squares[clydePosition].classList.contains("pac-man") &&
+            ghostsScared === false
+          ) {
+            console.log("game over");
+            alert("gama over");
+          }
+        }
+      }, clydeSpeed);
+    }, startDelay * 6);
+  }
 
   // // delay of Blinky
   setTimeout(() => {
     moveGhostBlinky();
   }, 2000);
 
-  // // delay of Inky
+  // // // delay of Inky
   setTimeout(() => {
     moveGhostInky();
   }, 4000);
 
-  // // // delay of Pinky
+  // // // // delay of Pinky
   setTimeout(() => {
     moveGhostPinky();
   }, 6000);
 
   // // delay of Clyde
-  // setTimeout(() => {
-  //   moveGhostClyde();
-  // }, 8000);
+  setTimeout(() => {
+    moveGhostClyde();
+  }, 8000);
 
   // how to win
 

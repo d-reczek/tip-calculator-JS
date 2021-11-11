@@ -58,6 +58,7 @@
 .pinky {
   background-color: pink;
   border-radius: 7px;
+  border: none;
 }
 .inky {
   background-color: aquamarine;
@@ -67,6 +68,7 @@
 .clyde {
   background-color: orange;
   border-radius: 7px;
+  border: none;
 }
 .ghosts-scared {
   background-color: green;
