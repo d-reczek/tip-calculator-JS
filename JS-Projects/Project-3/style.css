@@ -62,12 +62,12 @@
 .inky {
   background-color: aquamarine;
   border-radius: 7px;
+  border: none;
 }
 .clyde {
   background-color: orange;
   border-radius: 7px;
 }
 .ghosts-scared {
-
   background-color: green;
 }
