@@ -3,6 +3,7 @@ function init() {
   const introSound = document.querySelector(".intro");
   const dieSound = document.querySelector(".pac-man-die");
   const pacManChompSound = document.querySelector(".pac-man-chomp");
+  const pacManScaredSound = document.querySelector(".pac-man-scared");
   let pacManSirenSound = document.querySelector(".pac-man-siren");
 
   // variable for grid
@@ -153,7 +154,7 @@ function init() {
       pacManEatGhostClyde();
       gameOver();
       win();
-      pacManSirenSound.play();
+      // pacManSirenSound.play();
     });
   }
   pacManMove();
@@ -237,6 +238,7 @@ function init() {
     }
   }
   // PacMan eat power pellet
+  let timerPlaySoundScared = NaN;
   const timeWhenPacManEatPowerPellet = 10000;
   function pacManEatPowerPellet() {
     if (squares[pacManPosition].classList.contains("power-pellet")) {
@@ -246,6 +248,9 @@ function init() {
       pointsToWin += 1;
       score += 10;
       scoreSpan.textContent = score;
+      timerPlaySoundScared = setInterval(() => {
+        pacManScaredSound.play();
+      }, 500);
     }
   }
 
@@ -254,6 +259,7 @@ function init() {
 
   function ghostUnscared() {
     ghostsScared = false;
+    clearInterval(timerPlaySoundScared);
   }
 
   //creat ghost
