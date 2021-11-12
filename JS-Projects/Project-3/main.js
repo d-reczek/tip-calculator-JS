@@ -74,7 +74,7 @@ function init() {
         squares[i].classList.add(i);
       }
     }
-    // introSound.play();
+    introSound.play();
   }
   createBoard();
 
@@ -262,10 +262,10 @@ function init() {
   let inkyPosition = 351;
   let clydePosition = 407;
 
-  const blinkySpeed = 400;
-  const pinkySpeed = 450;
-  const inkySpeed = 350;
-  const clydeSpeed = 300;
+  const blinkySpeed = 100;
+  const pinkySpeed = 120;
+  const inkySpeed = 140;
+  const clydeSpeed = 150;
 
   function createGhost() {
     squares[blinkyPosition].classList.add("blinky");
@@ -275,6 +275,11 @@ function init() {
   }
   createGhost();
   const startDelay = 500;
+
+  //get the coordinates of pacman or blinky on the grid with X and Y axis
+  function getCoordinates(index) {
+    return [index % width, Math.floor(index / width)];
+  }
 
   let timerBlinky = NaN;
 
@@ -303,16 +308,42 @@ function init() {
       timerBlinky = setInterval(() => {
         let direction =
           directions[Math.floor(Math.random() * directions.length)];
-
         if (
           !squares[blinkyPosition + direction].classList.contains("wall") &&
           !squares[blinkyPosition + direction].classList.contains("ghost-lair")
         ) {
+          //blinky move
+          //
+
           squares[blinkyPosition].classList.remove("blinky");
           squares[blinkyPosition].classList.remove("ghosts-scared");
 
-          blinkyPosition += direction;
+          const [blinkyX, blinkyY] = getCoordinates(blinkyPosition);
+          const [pacManX, pacManY] = getCoordinates(pacManPosition);
+          const [blinkyNextX, blinkyNextY] = getCoordinates(
+            blinkyPosition + direction
+          );
 
+          function isXCoordCloser() {
+            if (Math.abs(blinkyNextX - pacManX) < Math.abs(blinkyX - pacManX)) {
+              return true;
+            } else return false;
+          }
+
+          function isYCoordCloser() {
+            if (Math.abs(blinkyNextY - pacManY) < Math.abs(blinkyY - pacManY)) {
+              return true;
+            } else return false;
+          }
+          if (isXCoordCloser() || isYCoordCloser()) {
+            console.log("if blinky");
+            blinkyPosition += direction;
+            squares[blinkyPosition].classList.add("blinky");
+          } else {
+            // blinkyPosition += direction;
+            // squares[blinkyPosition].classList.add("blinky");
+            // console.log("else blinky");
+          }
           squares[blinkyPosition].classList.add("blinky");
 
           if (!ghostsScared === false) {
@@ -325,6 +356,9 @@ function init() {
             gameOverForGhost();
           }
         }
+        // else {
+        //   direction = directions[Math.floor(Math.random() * directions.length)];
+        // }
       }, blinkySpeed);
     }, startDelay * 4);
   }
@@ -364,8 +398,34 @@ function init() {
           squares[inkyPosition].classList.remove("inky");
           squares[inkyPosition].classList.remove("ghosts-scared");
 
-          inkyPosition += direction;
+          // inkyPosition += direction;
 
+          // squares[inkyPosition].classList.add("inky");
+          const [inkyX, inkyY] = getCoordinates(inkyPosition);
+          const [pacManX, pacManY] = getCoordinates(pacManPosition);
+          const [inkyNextX, inkyNextY] = getCoordinates(
+            inkyPosition + direction
+          );
+
+          function isXCoordCloser() {
+            if (Math.abs(inkyNextX - pacManX) < Math.abs(inkyX - pacManX)) {
+              return true;
+            } else return false;
+          }
+
+          function isYCoordCloser() {
+            if (Math.abs(inkyNextY - pacManY) < Math.abs(inkyY - pacManY)) {
+              return true;
+            } else return false;
+          }
+          if (isXCoordCloser() || isYCoordCloser()) {
+            inkyPosition += direction;
+            squares[inkyPosition].classList.add("inky");
+          } else {
+            // inkyPosition += direction;
+            // squares[inkyPosition].classList.add("blinky");
+            // console.log("else blinky");
+          }
           squares[inkyPosition].classList.add("inky");
 
           if (!ghostsScared === false) {
@@ -425,8 +485,35 @@ function init() {
           squares[pinkyPosition].classList.remove("pinky");
           squares[pinkyPosition].classList.remove("ghosts-scared");
 
-          pinkyPosition += direction;
+          // pinkyPosition += direction;
 
+          // squares[pinkyPosition].classList.add("pinky");
+
+          const [pinkyX, pinkyY] = getCoordinates(pinkyPosition);
+          const [pacManX, pacManY] = getCoordinates(pacManPosition);
+          const [pinkyNextX, pinkyNextY] = getCoordinates(
+            pinkyPosition + direction
+          );
+
+          function isXCoordCloser() {
+            if (Math.abs(pinkyNextX - pacManX) < Math.abs(pinkyX - pacManX)) {
+              return true;
+            } else return false;
+          }
+
+          function isYCoordCloser() {
+            if (Math.abs(pinkyNextY - pacManY) < Math.abs(pinkyY - pacManY)) {
+              return true;
+            } else return false;
+          }
+          if (isXCoordCloser() || isYCoordCloser()) {
+            pinkyPosition += direction;
+            squares[pinkyPosition].classList.add("pinky");
+          } else {
+            // pinkyPosition += direction;
+            // squares[pinkyPosition].classList.add("blinky");
+            // console.log("else blinky");
+          }
           squares[pinkyPosition].classList.add("pinky");
 
           if (!ghostsScared === false) {
@@ -508,17 +595,17 @@ function init() {
     moveGhostBlinky();
   }, 2000);
 
-  // // // // delay of Inky
+  // // // // // delay of Inky
   setTimeout(() => {
     moveGhostInky();
   }, 4000);
 
-  // // // // // delay of Pinky
+  // // // // // // delay of Pinky
   setTimeout(() => {
     moveGhostPinky();
   }, 6000);
 
-  // // delay of Clyde
+  // // // delay of Clyde
   setTimeout(() => {
     moveGhostClyde();
   }, 8000);
@@ -533,7 +620,7 @@ function init() {
   //   highscore = score;
   // }
 
-  const winPoints = 2; //238
+  const winPoints = 400; //238
   function win() {
     if (pointsToWin === winPoints) {
       clearInterval(timerInky);
