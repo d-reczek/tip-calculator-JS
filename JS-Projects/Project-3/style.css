@@ -1,3 +1,5 @@
+/* main styles */
+
 :root {
   --pac-man-color: #ffcc00;
   --bcg: rgb(0, 0, 0);
@@ -6,10 +8,12 @@
   --border-heigh: 2px;
   --square: 25px;
 }
+
 body {
   font-family: "Press Start 2P", cursive;
   background-color: var(--bcg);
 }
+/* title styles  */
 
 .game-title-container {
   box-sizing: border-box;
@@ -27,8 +31,10 @@ body {
   text-align: center;
   padding: 10px;
   font-size: 6rem;
-  color: var(--pac-man-color);
+  color: yellow;
 }
+
+/* score board styles */
 .score-board-container {
   background-color: red;
   /* width: 700px; */
@@ -40,14 +46,13 @@ body {
   margin: 0;
   padding: 10px;
 }
+
 .highscore-container {
   text-align: center;
 }
 
-.win-container p {
-  font-size: 10rem;
-  color: red;
-}
+/* styles conected with win/lose game  */
+
 .wrapper {
   width: var(--width-height);
   position: relative;
@@ -59,11 +64,17 @@ body {
   top: 200px;
   display: none;
 }
+.win-container p {
+  font-size: 10rem;
+  color: red;
+}
 
 .grid-container {
   position: absolute;
   margin: 0 auto;
 }
+
+/* grid elements and characters styles*/
 
 .grid {
   background-color: var(--bcg);

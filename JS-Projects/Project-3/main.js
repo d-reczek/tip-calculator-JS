@@ -274,7 +274,7 @@ function init() {
     squares[clydePosition].classList.add("clyde");
   }
   createGhost();
-  const startDelay = 500;
+  const startDelay = 100;
 
   //get the coordinates of pacman or blinky on the grid with X and Y axis
   function getCoordinates(index) {
@@ -312,7 +312,7 @@ function init() {
           !squares[blinkyPosition + direction].classList.contains("wall") &&
           !squares[blinkyPosition + direction].classList.contains("ghost-lair")
         ) {
-          //blinky move
+          //blinky move random
           //
 
           squares[blinkyPosition].classList.remove("blinky");
@@ -336,13 +336,11 @@ function init() {
             } else return false;
           }
           if (isXCoordCloser() || isYCoordCloser()) {
-            console.log("if blinky");
             blinkyPosition += direction;
             squares[blinkyPosition].classList.add("blinky");
           } else {
             blinkyPosition += direction;
             squares[blinkyPosition].classList.add("blinky");
-            console.log("else blinky");
           }
           squares[blinkyPosition].classList.add("blinky");
 
@@ -356,9 +354,7 @@ function init() {
             gameOverForGhost();
           }
         }
-        // else {
-        //   direction = directions[Math.floor(Math.random() * directions.length)];
-        // }
+        // pacManSirenSound.play();
       }, blinkySpeed);
     }, startDelay * 4);
   }
@@ -398,9 +394,7 @@ function init() {
           squares[inkyPosition].classList.remove("inky");
           squares[inkyPosition].classList.remove("ghosts-scared");
 
-          // inkyPosition += direction;
-
-          // squares[inkyPosition].classList.add("inky");
+          // inky follow pacman
           const [inkyX, inkyY] = getCoordinates(inkyPosition);
           const [pacManX, pacManY] = getCoordinates(pacManPosition);
           const [inkyNextX, inkyNextY] = getCoordinates(
@@ -414,7 +408,7 @@ function init() {
           }
 
           function isYCoordCloser() {
-            if (Math.abs(inkyNextY - pacManY) > Math.abs(inkyY - pacManY)) {
+            if (Math.abs(inkyNextY - pacManY) < Math.abs(inkyY - pacManY)) {
               return true;
             } else return false;
           }
@@ -424,7 +418,6 @@ function init() {
           } else {
             // inkyPosition += direction;
             // squares[inkyPosition].classList.add("blinky");
-            // console.log("else blinky");
           }
           squares[inkyPosition].classList.add("inky");
 
@@ -485,9 +478,7 @@ function init() {
           squares[pinkyPosition].classList.remove("pinky");
           squares[pinkyPosition].classList.remove("ghosts-scared");
 
-          // pinkyPosition += direction;
-
-          // squares[pinkyPosition].classList.add("pinky");
+          //pinky follow pacman
 
           const [pinkyX, pinkyY] = getCoordinates(pinkyPosition);
           const [pacManX, pacManY] = getCoordinates(pacManPosition);
@@ -512,7 +503,6 @@ function init() {
           } else {
             // pinkyPosition += direction;
             // squares[pinkyPosition].classList.add("blinky");
-            // console.log("else blinky");
           }
           squares[pinkyPosition].classList.add("pinky");
 
@@ -572,6 +562,7 @@ function init() {
           squares[clydePosition].classList.remove("clyde");
           squares[clydePosition].classList.remove("ghosts-scared");
 
+          //clyde move random
           clydePosition += direction;
 
           squares[clydePosition].classList.add("clyde");
@@ -610,32 +601,32 @@ function init() {
     moveGhostClyde();
   }, 8000);
 
+  // highscore
+
+  const highscoreSave = localStorage.setItem("darek", "1");
+
+  let highscore = 0;
+  highscore = 230;
+  function highscoreAdd() {
+    highscore = score;
+  }
+
   // how to win
-  // const highscoreSave = localStorage.setItem("darek");
-  // localStorage.setItem("darek", highscore);
 
-  // let highscore = 0;
-  // highscore = 230;
-  // function highscoreAdd() {
-  //   highscore = score;
-  // }
-
-  const winPoints = 400; //238
+  const winPoints = 238; //238
   function win() {
     if (pointsToWin === winPoints) {
       clearInterval(timerInky);
       clearInterval(timerBlinky);
       clearInterval(timerPinky);
       clearInterval(timerClyde);
-      // game.style.display = "none";
-      // pacManSirenSound = 0;
+
       setTimeout(() => {
         winDiv.style.display = "inherit";
       }, 2500);
       setTimeout(() => {
         location.reload();
       }, 3500);
-      // alert("win");
     }
   }
 
@@ -655,9 +646,8 @@ function init() {
     clearInterval(timerBlinky);
     clearInterval(timerPinky);
     clearInterval(timerClyde);
-    // console.log("game over");
-    // alert("gama over");
     winDiv.style.display = "inherit";
+    winDiv.style.left = "5%";
 
     endingText.textContent = "GAME OVER";
     dieSound.play();
