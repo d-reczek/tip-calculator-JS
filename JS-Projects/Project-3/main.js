@@ -74,7 +74,7 @@ function init() {
         squares[i].classList.add(i);
       }
     }
-    introSound.play();
+    // introSound.play();
   }
   createBoard();
 
@@ -85,7 +85,6 @@ function init() {
   }
 
   createPacMan();
-
   // move PacMan
   function pacManMove() {
     document.addEventListener("keyup", (event) => {
@@ -154,9 +153,7 @@ function init() {
       pacManEatGhostClyde();
       gameOver();
       win();
-      setInterval(() => {
-        pacManSirenSound.play();
-      }, 600);
+      pacManSirenSound.play();
     });
   }
   pacManMove();
@@ -544,10 +541,13 @@ function init() {
       clearInterval(timerPinky);
       clearInterval(timerClyde);
       // game.style.display = "none";
-      pacManSirenSound = 0;
+      // pacManSirenSound = 0;
       setTimeout(() => {
         winDiv.style.display = "inherit";
       }, 2500);
+      setTimeout(() => {
+        location.reload();
+      }, 3500);
       // alert("win");
     }
   }
