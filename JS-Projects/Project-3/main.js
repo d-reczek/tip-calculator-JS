@@ -75,7 +75,7 @@ function init() {
         squares[i].classList.add(i);
       }
     }
-    // introSound.play();
+    introSound.play();
   }
   createBoard();
 
@@ -360,7 +360,7 @@ function init() {
             gameOverForGhost();
           }
         }
-        // pacManSirenSound.play();
+        pacManSirenSound.play();
       }, blinkySpeed);
     }, startDelay * 4);
   }
@@ -609,13 +609,13 @@ function init() {
 
   // highscore
 
-  const highscoreSave = localStorage.setItem("darek", "1");
+  // const highscoreSave = localStorage.setItem("darek", "1");
 
-  let highscore = 0;
-  highscore = 230;
-  function highscoreAdd() {
-    highscore = score;
-  }
+  // let highscore = 0;
+  // highscore = 230;
+  // function highscoreAdd() {
+  //   highscore = score;
+  // }
 
   // how to win
 
