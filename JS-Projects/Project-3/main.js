@@ -74,7 +74,7 @@ function init() {
         squares[i].classList.add(i);
       }
     }
-    introSound.play();
+    // introSound.play();
   }
   createBoard();
 
@@ -262,10 +262,10 @@ function init() {
   let inkyPosition = 351;
   let clydePosition = 407;
 
-  const blinkySpeed = 100;
-  const pinkySpeed = 120;
-  const inkySpeed = 140;
-  const clydeSpeed = 150;
+  const blinkySpeed = 180;
+  const pinkySpeed = 190;
+  const inkySpeed = 200;
+  const clydeSpeed = 210;
 
   function createGhost() {
     squares[blinkyPosition].classList.add("blinky");
@@ -340,9 +340,9 @@ function init() {
             blinkyPosition += direction;
             squares[blinkyPosition].classList.add("blinky");
           } else {
-            // blinkyPosition += direction;
-            // squares[blinkyPosition].classList.add("blinky");
-            // console.log("else blinky");
+            blinkyPosition += direction;
+            squares[blinkyPosition].classList.add("blinky");
+            console.log("else blinky");
           }
           squares[blinkyPosition].classList.add("blinky");
 
@@ -414,7 +414,7 @@ function init() {
           }
 
           function isYCoordCloser() {
-            if (Math.abs(inkyNextY - pacManY) < Math.abs(inkyY - pacManY)) {
+            if (Math.abs(inkyNextY - pacManY) > Math.abs(inkyY - pacManY)) {
               return true;
             } else return false;
           }
