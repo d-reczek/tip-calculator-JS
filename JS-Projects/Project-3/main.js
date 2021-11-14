@@ -617,7 +617,7 @@ function init() {
   // highscore
 
   // how to win
-  const winPoints = 25; //238
+  const winPoints = 20; //238
   function win() {
     if (pointsToWin === winPoints) {
       clearInterval(timerInky);
@@ -674,14 +674,15 @@ function init() {
   function renderHighScore() {
     // console.log(highScoreLS);
     // highscore = score;
-    localStorage.setItem("highScore", highscore);
+    // localStorage.setItem("highScore", highscore);
     if (isWin === true && score > highScoreLS) {
       highscore = score;
-      localStorage.setItem("highScore", highscore);
       highsScoreSpan.textContent = highScoreLS;
-      console.log("highscorels", highScoreLS);
-      console.log("dziala");
-    } else {
+      localStorage.setItem("highScore", highscore);
+      // console.log("highscorels", highScoreLS);
+      // console.log("dziala");
+    } else if (isWin === true && score < highScoreLS) {
+      // localStorage.setItem("highScore", highscore);
       console.log("niedziała");
     }
   }
