@@ -617,7 +617,7 @@ function init() {
   // highscore
 
   // how to win
-  const winPoints = 20; //238
+  const winPoints = 238; //238
   function win() {
     if (pointsToWin === winPoints) {
       clearInterval(timerInky);
