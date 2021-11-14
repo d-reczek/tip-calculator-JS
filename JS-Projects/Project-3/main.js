@@ -1,10 +1,15 @@
 function init() {
   // sound
   const introSound = document.querySelector(".intro");
+  introSound.volume = 0.1;
   const dieSound = document.querySelector(".pac-man-die");
+  dieSound.volume = 0.1;
   const pacManChompSound = document.querySelector(".pac-man-chomp");
+  pacManChompSound.volume = 0.1;
   const pacManScaredSound = document.querySelector(".pac-man-scared");
-  let pacManSirenSound = document.querySelector(".pac-man-siren");
+  pacManScaredSound.volume = 0.1;
+  const pacManSirenSound = document.querySelector(".pac-man-siren");
+  pacManSirenSound.volume = 0.1;
 
   // variable for grid
   const game = document.querySelector(".game");
@@ -154,7 +159,6 @@ function init() {
       pacManEatGhostClyde();
       gameOver();
       win();
-      // pacManSirenSound.play();
     });
   }
   pacManMove();
