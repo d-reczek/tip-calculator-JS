@@ -724,76 +724,142 @@ function init() {
   //
   //
   //
-  // const btn = document.querySelector("button");
-  // function pacManMoveMobile() {
-  //   btn.addEventListener("click", (event) => {
-  //     squares[pacManPosition].classList.remove(
-  //       "pac-man",
-  //       "pac-man-right",
-  //       "pac-man-left",
-  //       "pac-man-up",
-  //       "pac-man-down"
-  //     );
-  //     // teleportation from left to right
-  //     if (pacManPosition === 364) {
-  //       pacManPosition = 391;
-  //       // move left
-  //     } else if (
-  //       !squares[pacManPosition - 1].classList.contains("wall") &&
-  //       !squares[pacManPosition - 1].classList.contains("ghost-lair")
-  //     ) {
-  //       squares[(pacManPosition -= 1)].classList.add("pac-man", "pac-man-left");
-  //     }
+  const btnLeft = document.querySelector(".button-left");
+  const btnRight = document.querySelector(".button-right");
+  const btnUp = document.querySelector(".button-up");
+  const btnDown = document.querySelector(".button-down");
+  function pacManMoveMobile() {
+    //move left
+    btnLeft.addEventListener("click", (event) => {
+      squares[pacManPosition].classList.remove(
+        "pac-man",
+        "pac-man-right",
+        "pac-man-left",
+        "pac-man-up",
+        "pac-man-down"
+      );
+      // teleportation from left to right
+      if (pacManPosition === 364) {
+        pacManPosition = 391;
+        // move left
+      } else if (
+        !squares[pacManPosition - 1].classList.contains("wall") &&
+        !squares[pacManPosition - 1].classList.contains("ghost-lair")
+      ) {
+        squares[(pacManPosition -= 1)].classList.add("pac-man", "pac-man-left");
+      }
 
-  //     // // teleportation from right to left
-  //     // if (event.keyCode === 39 && pacManPosition === 391) {
-  //     //   pacManPosition = 364;
-  //     //   // move right
-  //     // } else if (
-  //     //   event.keyCode === 39 &&
-  //     //   !squares[pacManPosition + 1].classList.contains("wall") &&
-  //     //   !squares[pacManPosition + 1].classList.contains("ghost-lair")
-  //     // ) {
-  //     //   squares[(pacManPosition += 1)].classList.add(
-  //     //     "pac-man",
-  //     //     "pac-man-right"
-  //     //   );
-  //     // }
-  //     // // move up
-  //     // if (
-  //     //   event.keyCode === 38 &&
-  //     //   !squares[pacManPosition - width].classList.contains("wall") &&
-  //     //   !squares[pacManPosition - width].classList.contains("ghost-lair")
-  //     // ) {
-  //     //   squares[(pacManPosition -= width)].classList.add(
-  //     //     "pac-man",
-  //     //     "pac-man-up"
-  //     //   );
-  //     // }
-  //     // // move down
-  //     // if (
-  //     //   event.keyCode === 40 &&
-  //     //   !squares[pacManPosition + width].classList.contains("wall") &&
-  //     //   !squares[pacManPosition + width].classList.contains("ghost-lair")
-  //     // ) {
-  //     //   squares[(pacManPosition += width)].classList.add(
-  //     //     "pac-man",
-  //     //     "pac-man-down"
-  //     //   );
-  //     // }
+      squares[pacManPosition].classList.add("pac-man");
+      pacManEatDot();
+      pacManEatPowerPellet();
+      pacManEatGhostBlinky();
+      pacManEatGhostInky();
+      pacManEatGhostPinky();
+      pacManEatGhostClyde();
+      gameOver();
+      win();
+      renderHighScore();
+    });
 
-  //     squares[pacManPosition].classList.add("pac-man");
-  //     pacManEatDot();
-  //     pacManEatPowerPellet();
-  //     pacManEatGhostBlinky();
-  //     pacManEatGhostInky();
-  //     pacManEatGhostPinky();
-  //     pacManEatGhostClyde();
-  //     gameOver();
-  //     win();
-  // pacManSirenSound.play();
-  // });
-  // }
-  // pacManMoveMobile();
+    //move right
+    btnRight.addEventListener("click", (event) => {
+      squares[pacManPosition].classList.remove(
+        "pac-man",
+        "pac-man-right",
+        "pac-man-left",
+        "pac-man-up",
+        "pac-man-down"
+      );
+      // teleportation from right to left
+      if (pacManPosition === 391) {
+        pacManPosition = 364;
+        // move right
+      } else if (
+        !squares[pacManPosition + 1].classList.contains("wall") &&
+        !squares[pacManPosition + 1].classList.contains("ghost-lair")
+      ) {
+        squares[(pacManPosition += 1)].classList.add(
+          "pac-man",
+          "pac-man-right"
+        );
+      }
+
+      squares[pacManPosition].classList.add("pac-man");
+      pacManEatDot();
+      pacManEatPowerPellet();
+      pacManEatGhostBlinky();
+      pacManEatGhostInky();
+      pacManEatGhostPinky();
+      pacManEatGhostClyde();
+      gameOver();
+      win();
+      renderHighScore();
+    });
+
+    //move up
+    btnUp.addEventListener("click", (event) => {
+      console.log("Up");
+      squares[pacManPosition].classList.remove(
+        "pac-man",
+        "pac-man-right",
+        "pac-man-left",
+        "pac-man-up",
+        "pac-man-down"
+      );
+      if (
+        !squares[pacManPosition - width].classList.contains("wall") &&
+        !squares[pacManPosition - width].classList.contains("ghost-lair")
+      ) {
+        squares[(pacManPosition -= width)].classList.add(
+          "pac-man",
+          "pac-man-up"
+        );
+      }
+
+      squares[pacManPosition].classList.add("pac-man");
+      pacManEatDot();
+      pacManEatPowerPellet();
+      pacManEatGhostBlinky();
+      pacManEatGhostInky();
+      pacManEatGhostPinky();
+      pacManEatGhostClyde();
+      gameOver();
+      win();
+      renderHighScore();
+    });
+
+    //move down
+    btnDown.addEventListener("click", (event) => {
+      console.log("Up");
+      squares[pacManPosition].classList.remove(
+        "pac-man",
+        "pac-man-right",
+        "pac-man-left",
+        "pac-man-up",
+        "pac-man-down"
+      );
+      if (
+        !squares[pacManPosition + width].classList.contains("wall") &&
+        !squares[pacManPosition + width].classList.contains("ghost-lair")
+      ) {
+        squares[(pacManPosition += width)].classList.add(
+          "pac-man",
+          "pac-man-down"
+        );
+      }
+
+      squares[pacManPosition].classList.add("pac-man");
+      pacManEatDot();
+      pacManEatPowerPellet();
+      pacManEatGhostBlinky();
+      pacManEatGhostInky();
+      pacManEatGhostPinky();
+      pacManEatGhostClyde();
+      gameOver();
+      win();
+      renderHighScore();
+    });
+  }
+  pacManMoveMobile();
 }
 window.onload = init;
