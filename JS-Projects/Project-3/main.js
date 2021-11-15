@@ -294,6 +294,36 @@ function init() {
     return [index % width, Math.floor(index / width)];
   }
 
+  console.log(getCoordinates(1));
+  console.log(getCoordinates(2));
+  console.log(getCoordinates(3));
+  console.log(getCoordinates(4));
+  console.log(getCoordinates(5));
+  console.log(getCoordinates(6));
+  console.log(getCoordinates(7));
+  console.log(getCoordinates(8));
+  console.log(getCoordinates(9));
+  console.log(getCoordinates(10));
+  console.log(getCoordinates(11));
+  console.log(getCoordinates(12));
+  console.log(getCoordinates(13));
+  console.log(getCoordinates(14));
+  console.log(getCoordinates(15));
+  console.log(getCoordinates(16));
+  console.log(getCoordinates(17));
+  console.log(getCoordinates(18));
+  console.log(getCoordinates(19));
+  console.log(getCoordinates(21));
+  console.log(getCoordinates(22));
+  console.log(getCoordinates(23));
+  console.log(getCoordinates(24));
+  console.log(getCoordinates(25));
+  console.log(getCoordinates(26));
+  console.log(getCoordinates(27));
+  console.log(getCoordinates(28));
+  console.log(getCoordinates(29));
+  console.log(getCoordinates(783));
+
   let timerBlinky = NaN;
 
   // move ghost Blinky
@@ -352,8 +382,8 @@ function init() {
             blinkyPosition += direction;
             squares[blinkyPosition].classList.add("blinky");
           } else {
-            blinkyPosition += direction;
-            squares[blinkyPosition].classList.add("blinky");
+            // blinkyPosition += direction;
+            // squares[blinkyPosition].classList.add("blinky");
           }
           squares[blinkyPosition].classList.add("blinky");
 
