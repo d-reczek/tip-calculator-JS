@@ -233,4 +233,9 @@ body {
   .buttons {
     display: inherit;
   }
+
+  .game {
+    width: 100%;
+    height: 100vh;
+  }
 }
