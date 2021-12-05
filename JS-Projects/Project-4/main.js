@@ -20,21 +20,46 @@ function init() {
         console.log(
           `Tytuł: ${data.Title}  Ocena na IMDB: ${data.imdbRating} plakat ${data.Poster}`
         );
+        const rating = data.Ratings;
+        let rottenRate = "";
+        const RT = () => {
+          rating.forEach((element) => {
+            if (element.Source === "Rotten Tomatoes") {
+              console.log(element.Value);
+              return (rottenRate = element.Value);
+            }
+          });
+        };
+        let mCRate = "";
+        const MC = () => {
+          rating.forEach((element) => {
+            if (element.Source === "Metacritic") {
+              console.log(element.Value);
+              return (mCRate = element.Value);
+            }
+          });
+        };
+        MC();
+        // console.log("roten", rottenRate);
+
         const title = data.Title;
         const rate = data.imdbRating;
         const poster = data.Poster;
+        const year = data.Year;
         console.log(title);
 
         titleDiv.textContent = `Tytuł filmu ${title}`;
-        rateDiv.textContent = `Ocena na IMDB ${rate}`;
+        rateDiv.textContent = `Ocena na IMDB ${rate} Ocena Rotten: ${rottenRate} Ocena Metacritic ${mCRate}`;
         posterImg.src = poster;
         console.log(posterImg);
         return data;
       } catch (error) {
         console.error(error);
+        titleDiv.textContent = "Brak takiego filmu";
       }
     }
     searchMovies();
+    form.reset();
   });
   console.log(posterImg.src);
   // console.log(searchMovies);
