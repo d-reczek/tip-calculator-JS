@@ -1,0 +1,28 @@
+:root {
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: green;
+}
+label {
+  display: block;
+  padding: 5px;
+}
+::placeholder {
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  padding: 5px;
+  gap: 20px;
+  justify-content: center;
+}
+.search-movie {
+  background-color: #fff;
+  padding: 10px;
+}
+.movie-container {
+  background-color: wheat;
+  padding: 5px;
+}

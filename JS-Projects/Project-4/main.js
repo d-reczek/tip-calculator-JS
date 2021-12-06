@@ -1,7 +1,10 @@
 function init() {
-  const form = document.querySelector("form");
-  const titleDiv = document.querySelector(".title");
-  const rateDiv = document.querySelector(".rate");
+  const form = document.querySelector(".search-movie");
+  const titleSpan = document.querySelector(".title");
+  const imdbRateSpan = document.querySelector(".imdb-rate");
+  const rtRateSpan = document.querySelector(".rt-rate");
+  const mcRateSpan = document.querySelector(".mc-rate");
+  const relaseDateSpan = document.querySelector(".relase");
   const posterImg = document.getElementById("poster");
 
   form.addEventListener("submit", (event) => {
@@ -30,6 +33,7 @@ function init() {
             }
           });
         };
+        RT();
         let mCRate = "";
         const MC = () => {
           rating.forEach((element) => {
@@ -43,13 +47,16 @@ function init() {
         // console.log("roten", rottenRate);
 
         const title = data.Title;
-        const rate = data.imdbRating;
-        const poster = data.Poster;
         const year = data.Year;
+        const imdbRateValue = data.imdbRating;
+        const poster = data.Poster;
         console.log(title);
 
-        titleDiv.textContent = `Tytuł filmu ${title}`;
-        rateDiv.textContent = `Ocena na IMDB ${rate} Ocena Rotten: ${rottenRate} Ocena Metacritic ${mCRate}`;
+        titleSpan.textContent = title;
+        relaseDateSpan.textContent = year;
+        imdbRateSpan.textContent = imdbRateValue;
+        rtRateSpan.textContent = rottenRate;
+        mcRateSpan.textContent = mCRate;
         posterImg.src = poster;
         console.log(posterImg);
         return data;
