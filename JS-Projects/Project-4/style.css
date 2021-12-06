@@ -19,10 +19,15 @@ label {
   justify-content: center;
 }
 .search-movie {
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 10px;
 }
 .movie-container {
   background-color: wheat;
+  padding: 5px;
+}
+.movie-title-container,
+.movie-year-container {
+  background-color: #fff;
   padding: 5px;
 }
