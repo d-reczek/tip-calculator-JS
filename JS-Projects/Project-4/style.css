@@ -1,33 +1,111 @@
 :root {
+  --form-bcg: rgba(219, 7, 7, 0.918);
+  --main-brd-radius: 3px;
+
 }
 body {
   font-family: "Roboto", sans-serif;
-  background-color: green;
+  background-image: url(./img/pexels-donald-tong-109669.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  height: 100vh;
+  font-size: 16px;
+  color: #fff;
 }
 label {
   display: block;
-  padding: 5px;
+  font-size: 1rem;
+}
+input{
+  background-color: rgb(245, 171, 171);
+  border: 1px solid #000;
+  border-radius: var(--main-brd-radius);
+}
+input:focus{
+  background-color: #fff;
+  border: none;
+  color: red;
 }
 ::placeholder {
   font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
+  width: 75%;
+  margin: 0 auto;
   display: flex;
   padding: 5px;
   gap: 20px;
   justify-content: center;
+  background-color: #659dbdec
+   
+   /* background-image: url(./img/pexels-cottonbro-3945317.jpg);
+   background-repeat: no-repeat;
+   background-size: cover; */
 }
 .search-movie {
   /* background-color: #fff; */
   padding: 10px;
 }
-.movie-container {
-  background-color: wheat;
-  padding: 5px;
+
+.bcg-form {
+  background-color: var(--form-bcg);
+  padding: 10px;
 }
-.movie-title-container,
-.movie-year-container {
+.movie-title-container{
+  border-radius: var(--main-brd-radius) var(--main-brd-radius) 0 0 ; 
+}
+
+.movie-year-container{
+  border-radius: 0 0 var(--main-brd-radius) var(--main-brd-radius) ; 
+}
+
+.btn-search{
+  display: inline-block;
+background: none;
+text-transform: uppercase;
+border: none;
+text-align: center;
+width: 100%;
+padding: 5px;
+background-color: #fff;
+border: #000 solid 1px;
+cursor: pointer;
+margin-top: 5px;
+color: #fff;
+background-color: var(--form-bcg);
+transition: all;
+transition-duration: 0.6s;
+border-radius: var(--main-brd-radius);
+}
+.btn-search:hover{
+background-color: rgb(255, 255, 255);
+color: red;
+box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+;
+}
+
+.movie-container {
+  /* background-color: grey; */
+  padding: 10px;
+  
+}
+.title-contaier{
+  padding: 10px;
+  background-color: #000;
+}
+
+
+
+.poster-container{
+  padding: 10px;
   background-color: #fff;
-  padding: 5px;
+  border: black 5px solid;
+  border-radius: var(--main-brd-radius);
+ 
+  box-shadow: inset 0 0 8em white, 0 0 8em red;
+  
+}
+#poster{
+  
 }
