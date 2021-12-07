@@ -6,6 +6,8 @@ function init() {
   const mcRateSpan = document.querySelector(".mc-rate");
   const relaseDateSpan = document.querySelector(".relase");
   const posterImg = document.getElementById("poster");
+  const imdbLink = document.getElementById("imdb-link");
+  const noMovieDiv = document.querySelector(".no-movie");
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -18,17 +20,11 @@ function init() {
         );
         const data = await res.json();
         console.log(data);
-
-        console.log(data.Title);
-        console.log(
-          `Tytuł: ${data.Title}  Ocena na IMDB: ${data.imdbRating} plakat ${data.Poster}`
-        );
         const rating = data.Ratings;
         let rottenRate = "";
         const RT = () => {
           rating.forEach((element) => {
             if (element.Source === "Rotten Tomatoes") {
-              console.log(element.Value);
               return (rottenRate = element.Value);
             }
           });
@@ -38,38 +34,57 @@ function init() {
         const MC = () => {
           rating.forEach((element) => {
             if (element.Source === "Metacritic") {
-              console.log(element.Value);
               return (mCRate = element.Value);
             }
           });
         };
         MC();
-        // console.log("roten", rottenRate);
 
         const title = data.Title;
         const year = data.Year;
         const imdbRateValue = data.imdbRating;
         const poster = data.Poster;
-        console.log(title);
-
+        const imdbID = data.imdbID;
+        console.log(imdbID);
         titleSpan.textContent = title;
         relaseDateSpan.textContent = year;
         imdbRateSpan.textContent = imdbRateValue;
         rtRateSpan.textContent = rottenRate;
         mcRateSpan.textContent = mCRate;
         posterImg.src = poster;
-        console.log(posterImg);
+        imdbLink.href = `https://www.imdb.com/title/${imdbID}/`;
+        console.log(imdbLink.href);
+        posterImg.style.display = "block";
+        noMovieDiv.style.display = "none";
+        imdbLink;
         return data;
       } catch (error) {
         console.error(error);
-        titleDiv.textContent = "Brak takiego filmu";
+        posterImg.style.display = "none";
+        noMovieDiv.style.display = "block";
+
+        // noMovieInformation();
+        // posterImg.style.display = "none";
+        // const errorDiv = document.createElement("div");
+        // errorDiv.classList.add("no-movie");
+        // errorDiv.textContent =
+        //   "Brak takiego filmu, wprowadź rok wydania lub popraw tytuł filmu";
+        // const posterContainer = document.querySelector(".poster-container");
+        // posterContainer.append(errorDiv);
       }
     }
     searchMovies();
     form.reset();
   });
-  console.log(posterImg.src);
-  // console.log(searchMovies);
+
+  // function noMovieInformation() {
+  //   // const errorDiv = document.createElement("div");
+  //   // errorDiv.classList.add("no-movie");
+  //   errorDiv.textContent =
+  //     // "Brak takiego filmu, wprowadź rok wydania lub popraw tytuł filmu";
+  //   const posterContainer = document.querySelector(".poster-container");
+  //   posterContainer.append(errorDiv);
+  // }
 }
 window.onload = init;
 // http://www.omdbapi.com/?i=tt7830912&apikey=a8fcf47b
