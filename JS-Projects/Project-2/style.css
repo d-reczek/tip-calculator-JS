@@ -2,7 +2,7 @@
   --main-bcg: #342d31f3;
   --wrapper-bcg: #887374;
   --input-bcg: #d3d3d3;
-  --btn-bcg: #272321;
+  --btn-bcg: #342d31;
 }
 body {
   font-family: "Martel Sans", sans-serif;
@@ -34,12 +34,11 @@ h1 {
 }
 .bill-value:focus {
   background-color: #fff;
-  width: 30%;
+  width: 80%;
   border: none;
   outline: none;
 }
 .range-tip {
-  /* display: block; */
   width: 100%;
 }
 .range-tip:focus {
@@ -60,7 +59,7 @@ h1 {
 }
 .tip-btn {
   color: #fff;
-  background-color: #483d41;
+  background-color: var(--btn-bcg);
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -76,17 +75,6 @@ h1 {
   color: #000;
 }
 
-.range-tip {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-  border-radius: 5px;
-}
 .tip-amount-element {
   display: flex;
   justify-content: space-between;
@@ -98,7 +86,19 @@ h1 {
   color: var(--btn-bcg);
 }
 
-/* range slyder inpu style */
+/* range slyder input style */
+.range-tip {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 5px;
+}
+
 .range-tip:hover {
   opacity: 1;
 }
