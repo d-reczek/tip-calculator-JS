@@ -1,44 +1,51 @@
 <!DOCTYPE html>
-<html lang="pl">
+<lang="pl">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./main.js"></script>
-    <title>Document</title>
-</head>
-<style>
-    body {
-        font-size: 30px;
-    }
-</style>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./main.js"></script>
+        <link rel="stylesheet" href="./reset.css">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <title>Tip Calculator</title>
+    </head>
 
-<body>
-    <form action="">
-        <div>
-            <label for=""> Rachunek
-                <input class="bill" type="number" value="0">
-            </label>
-        </div>
-        <label for=""> procent napiwku
-            <span class="percent">0</span>
+
+    <div class="wrapper">
+        <h1>Tip Calculator</h1>
+        <form class="bill">
+            <div>
+                <label for="bill-value"> Rachunek</label>
+                <div class="bill-value-container">
+                    <input class="bill-value" type="number" placeholder="zł">
+                </div>
+
+            </div>
+            <div>
+                <label for="range-tip"> Napiwek</label>
+                <span class="percent">0%</span>
+            </div>
             <input class="range-tip" value="0" type="range" min="0" max="100">
-        </label>
-    </form>
-    <form action="">
-        <span>Wielkość napiwku </span><span class="tip-value">0,00 zł </span>
-        <label for="">tip
-            <!-- <input class="tip-value" type="text"> -->
-        </label>
-        <span>Całkowicie do zapłaty<span class="total-amount">0,00 zł</span></span>
-        <button class="button-10">10 procnet</button>
-        <button class="button-20">20 procent </button>
 
+
+            <div class="btn-container">
+                <button class="tip-btn button-10">10 %</button>
+                <button class="tip-btn button-20">20 % </button>
+            </div>
+        </form>
+        <div class="tip-amount">
+            <div>
+                <span>Napiwek </span><span class="tip-value">0,00 zł </span>
+            </div>
+            <div>
+                <span>Rachunek napiwek <span class="total-amount">0,00 zł</span></span>
+            </div>
         </div>
+    </div>
+    </body>
 
-    </form>
-    <div>
-</body>
-
-</html>
+    </html>
