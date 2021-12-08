@@ -31,6 +31,7 @@ h1 {
   background-color: var(--input-bcg);
   transition-duration: 1s;
   text-align: center;
+  color: var(--btn-bcg);
 }
 .bill-value:focus {
   background-color: #fff;
