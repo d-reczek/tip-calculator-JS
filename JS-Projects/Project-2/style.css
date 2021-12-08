@@ -1,12 +1,21 @@
 :root {
+  --main-bcg: #342d31f3;
+  --wrapper-bcg: #887374;
+  --input-bcg: #d3d3d3;
+  --btn-bcg: #272321;
 }
 body {
   font-family: "Martel Sans", sans-serif;
   display: flex;
   justify-content: center;
   font-size: 16px;
-  background-color: #342d31;
+  background-color: var(--main-bcg);
   color: #fff;
+}
+h1 {
+  font-size: 3.5rem;
+  border-bottom: 1px solid;
+  padding: 0;
 }
 .bill-value-container {
   display: flex;
@@ -19,12 +28,12 @@ body {
   border-radius: 5px;
   width: 100%;
   transition: all;
-  background-color: #d3d3d3;
+  background-color: var(--input-bcg);
   transition-duration: 1s;
   text-align: center;
 }
 .bill-value:focus {
-  background-color: #e5e5e5;
+  background-color: #fff;
   width: 30%;
   border: none;
   outline: none;
@@ -43,7 +52,7 @@ body {
   padding: 30px;
   border-radius: 30px;
   font-size: 1.4rem;
-  background-color: #887374;
+  background-color: var(--wrapper-bcg);
 }
 .btn-container {
   display: flex;
@@ -58,6 +67,13 @@ body {
   padding: 5px;
   width: 30%;
   text-align: center;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 0.5s;
+}
+.tip-btn:hover {
+  background-color: var(--input-bcg);
+  color: #000;
 }
 
 .range-tip {
@@ -71,7 +87,18 @@ body {
   transition: opacity 0.2s;
   border-radius: 5px;
 }
+.tip-amount-element {
+  display: flex;
+  justify-content: space-between;
+}
+.tip-value,
+.total-amount {
+  display: inline-block;
+  font-weight: bold;
+  color: var(--btn-bcg);
+}
 
+/* range slyder inpu style */
 .range-tip:hover {
   opacity: 1;
 }
@@ -81,7 +108,7 @@ body {
   appearance: none;
   width: 25px;
   height: 25px;
-  background: #272321;
+  background: var(--btn-bcg);
   cursor: pointer;
   border-radius: 5px;
 }
@@ -89,18 +116,6 @@ body {
 .range-tip::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  background: #272321;
+  background: var(--btn-bcg);
   cursor: pointer;
-}
-
-
-.tip-amount-element {
-  display: flex;
-  justify-content: space-between;
-}
-.tip-value,
-.total-amount {
-  display: inline-block;
-  font-weight: bold;
-  color: #272321;
 }
